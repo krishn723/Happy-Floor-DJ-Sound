@@ -1,12 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#21001f">
-<title>Happy Floor DJ Sound | Pilani</title>
-<meta name="description" content="Explore 8 premium DJ sound and lighting setups by Happy Floor DJ Sound, Pilani.">
+<title>Happy Floor DJ Sound | Pilani & Jhunjhunu DJ & Event Setups</title>
+<meta name="description" content="Explore 8 DJ sound, floor, and lighting setups plus individual equipment rentals by Happy Floor DJ Sound in Pilani, Jhunjhunu, Rajasthan.">
+<meta name="keywords" content="Happy Floor DJ Sound, DJ booking Pilani, DJ setup Jhunjhunu, 4x4 tower DJ, single sided tower DJ, CRP lights, PAR lights, bass speaker rental Rajasthan">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Happy Floor DJ Sound | Pilani">
+<meta property="og:description" content="DJ sound setups, 4x4 & single-sided tower stages, lighting, and individual sound/light rentals in Pilani, Rajasthan.">
+<meta property="og:type" content="website">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Happy Floor DJ Sound",
+  "founder": {
+    "@type": "Person",
+    "name": "Ashok Kumar"
+  },
+  "email": "krishansaini5152@gmail.com",
+  "telephone": "+91-9529102585",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pilani",
+    "addressRegion": "Rajasthan",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.332028,
+    "longitude": 75.56675
+  },
+  "areaServed": ["Pilani", "Jhunjhunu", "Rajasthan"]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -22,6 +52,9 @@
   --white:#fff;
   --muted:#c7afc3;
   --border:rgba(255,255,255,.12);
+  --ok:#36e39b;
+  --warn:#ffbe3b;
+  --err:#ff5c77;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -32,13 +65,12 @@ body{
   font-family:Montserrat,sans-serif;
   overflow-x:hidden;
 }
-button,a{font-family:inherit}
+button,a,input,select,textarea{font-family:inherit}
 button{cursor:pointer}
 a{text-decoration:none;color:inherit}
 .container{width:min(1250px,92%);margin:auto}
 
 /* NAVBAR */
-
 header{
   position:sticky;top:0;z-index:50;
   background:rgba(25,0,23,.96);
@@ -46,22 +78,30 @@ header{
   border-bottom:1px solid var(--border);
 }
 .navbar{
-  height:76px;display:flex;
-  justify-content:space-between;align-items:center;
+  min-height:76px;padding:8px 0;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
 }
-.brand{font-size:23px;font-weight:900;letter-spacing:-1px}
+.brand{font-size:21px;font-weight:900;letter-spacing:-1px;flex-shrink:0}
 .brand span{color:var(--yellow)}
 .brand small{
   display:block;font-size:8px;
   letter-spacing:3px;color:#c9a9c3;margin-top:4px;
 }
-.nav-links{display:flex;align-items:center;gap:27px}
-.nav-links a{font-size:10px;font-weight:800;transition:.2s}
-.nav-links a:hover{color:var(--yellow)}
+.nav-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-links a,.nav-btn{
+  font-size:10px;font-weight:800;transition:.2s;
+  background:transparent;border:0;color:var(--white);padding:0;
+}
+.nav-links a:hover,.nav-btn:hover{color:var(--yellow)}
 .nav-links .nav-highlight{
   background:var(--yellow);color:#180018;
-  padding:11px 18px;border-radius:30px;
+  padding:10px 16px;border-radius:30px;
 }
+.nav-links .nav-ghost{
+  border:1px solid rgba(255,255,255,.28);
+  padding:9px 14px;border-radius:30px;
+}
+.nav-links .nav-ghost:hover{border-color:var(--yellow);color:var(--yellow)}
 .menu-toggle{
   display:none;background:var(--yellow);
   color:#170016;border:0;border-radius:8px;
@@ -69,7 +109,6 @@ header{
 }
 
 /* HERO */
-
 .hero{
   min-height:490px;
   display:flex;align-items:center;
@@ -90,7 +129,7 @@ header{
 }
 .hero h1 span{color:var(--yellow)}
 .hero p{
-  max-width:520px;font-size:12px;
+  max-width:540px;font-size:12px;
   line-height:2;color:#e4cde0;
 }
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}
@@ -106,9 +145,11 @@ header{
 .btn-yellow{background:var(--yellow);color:#160016}
 .btn-outline{border:1px solid #b99ab3;color:white;background:transparent}
 .btn-outline:hover{border-color:var(--yellow);color:var(--yellow)}
+.btn-sm{padding:9px 14px;font-size:9px}
+.btn-danger{background:rgba(255,92,119,.16);color:#ff93a5;border:1px solid rgba(255,92,119,.4)}
+.btn-ok{background:rgba(54,227,155,.16);color:#7cf5c2;border:1px solid rgba(54,227,155,.4)}
 
 /* GENERAL SECTIONS */
-
 section{scroll-margin-top:90px}
 .section{padding:75px 0}
 .section-heading{margin-bottom:32px}
@@ -119,11 +160,10 @@ section{scroll-margin-top:90px}
 }
 .section-heading p{
   color:var(--muted);font-size:11px;
-  line-height:1.9;margin-top:10px;
+  line-height:1.9;margin-top:10px;max-width:740px;
 }
 
 /* SETUP GRID */
-
 .setup-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -136,6 +176,7 @@ section{scroll-margin-top:90px}
   overflow:hidden;
   transition:.3s;
   cursor:pointer;
+  display:flex;flex-direction:column;
 }
 .setup-card:hover{
   transform:translateY(-5px);
@@ -163,7 +204,7 @@ section{scroll-margin-top:90px}
   padding:8px 11px;border-radius:30px;
   font-size:9px;
 }
-.card-content{padding:19px}
+.card-content{padding:19px;display:flex;flex-direction:column;flex:1}
 .card-content h3{font-size:16px;margin-bottom:8px}
 .card-category{
   color:var(--yellow);font-size:9px;
@@ -171,7 +212,7 @@ section{scroll-margin-top:90px}
 }
 .card-content p{
   font-size:10px;color:var(--muted);
-  line-height:1.8;margin-top:10px;
+  line-height:1.8;margin-top:10px;flex:1;
 }
 .card-price{
   border-top:1px solid var(--border);
@@ -189,8 +230,26 @@ section{scroll-margin-top:90px}
   padding:10px 14px;font-size:9px;font-weight:900;
 }
 
-/* EQUIPMENT */
+/* STANDALONE RENTALS */
+.rentals-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(265px,1fr));
+  gap:16px;
+}
+.rental-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:18px;
+  display:flex;flex-direction:column;justify-content:space-between;gap:14px;
+}
+.rental-card h3{font-size:14px;margin-top:6px}
+.rental-card p{font-size:10px;color:var(--muted);line-height:1.75;margin-top:6px}
+.rental-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px}
+.rental-price{color:var(--yellow);font-size:14px;font-weight:900}
+.rental-stock{font-size:9px;color:#dfc2da;background:#3a0031;padding:5px 9px;border-radius:20px}
 
+/* EQUIPMENT */
 .equipment-section{background:#250020}
 .equipment-grid{
   display:grid;grid-template-columns:repeat(4,1fr);gap:15px;
@@ -204,8 +263,7 @@ section{scroll-margin-top:90px}
 .equipment-box h3{font-size:13px;margin:13px 0 8px}
 .equipment-box p{font-size:10px;line-height:1.8;color:var(--muted)}
 
-/* CONTACT */
-
+/* CONTACT & LEGAL */
 .contact-section{padding:70px 0}
 .contact-box{
   padding:40px;
@@ -213,20 +271,35 @@ section{scroll-margin-top:90px}
   border:1px solid var(--border);
   border-radius:17px;
   display:flex;justify-content:space-between;
-  align-items:center;gap:25px;
+  align-items:center;gap:25px;flex-wrap:wrap;
 }
 .contact-box h2{font-size:clamp(25px,4vw,40px);margin-top:12px}
-.contact-box p{font-size:11px;color:#ddc0d6;line-height:1.8;margin-top:10px}
+.contact-box p{font-size:11px;color:#ddc0d6;line-height:1.85;margin-top:10px;max-width:680px}
+.contact-details{
+  margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:10px;font-size:10px;color:#f3dcf0;
+}
+.contact-chip{
+  background:rgba(16,0,16,.55);
+  border:1px solid var(--border);
+  border-radius:10px;padding:10px 12px;
+}
+.contact-chip strong{display:block;color:var(--yellow);font-size:9px;letter-spacing:1px;margin-bottom:3px}
 
 footer{background:#100010;border-top:1px solid var(--border);padding:26px 0}
 .footer-inner{
-  display:flex;justify-content:space-between;
+  display:flex;justify-content:space-between;align-items:center;
   gap:15px;flex-wrap:wrap;
   font-size:10px;color:#bd9bb5;
 }
+.footer-links{display:flex;gap:14px;flex-wrap:wrap}
+.footer-links button{
+  background:transparent;border:0;color:var(--yellow);
+  font-size:10px;font-weight:700;padding:0;
+}
+.footer-links button:hover{text-decoration:underline}
 
 /* SLIDING SETUP DRAWER */
-
 .overlay{
   position:fixed;inset:0;z-index:100;
   background:rgba(0,0,0,.78);
@@ -277,7 +350,6 @@ footer{background:#100010;border-top:1px solid var(--border);padding:26px 0}
 }
 
 /* SLIDING MEDIA GALLERY */
-
 .gallery-frame{
   position:relative;
   border-radius:12px;
@@ -320,28 +392,51 @@ footer{background:#100010;border-top:1px solid var(--border);padding:26px 0}
   position:absolute;top:43%;
   width:37px;height:37px;
   border-radius:50%;border:1px solid #ffffff55;
-  background:#160016bb;color:white;
+  background:#160016cc;color:white;
   font-size:20px;z-index:3;
+  display:inline-flex;align-items:center;justify-content:center;
 }
 .gallery-arrow:hover{background:var(--yellow);color:#180018}
 .gallery-arrow.prev{left:12px}
 .gallery-arrow.next{right:12px}
+.gallery-arrow.is-hidden{display:none}
+
 .gallery-position{
-  display:flex;justify-content:center;
-  gap:7px;padding:13px;
+  display:flex;justify-content:center;align-items:center;
+  flex-wrap:wrap;
+  gap:6px;padding:13px 6px 10px;
 }
 .gallery-dot{
-  height:6px;width:6px;border-radius:10px;
+  height:7px;width:7px;border-radius:10px;
   background:#88617f;transition:.2s;
+  flex-shrink:0;border:0;padding:0;
 }
 .gallery-dot.active{width:20px;background:var(--yellow)}
+
+.gallery-video-pill{
+  height:16px;min-width:18px;padding:0 5px;
+  border-radius:999px;
+  background:#4a1743;
+  border:1px solid rgba(255,255,255,.22);
+  color:#f3dcf0;
+  font-size:8px;line-height:1;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:.2s;
+  flex-shrink:0;
+}
+.gallery-video-pill.active{
+  background:var(--yellow);
+  border-color:var(--yellow);
+  color:#180018;
+  font-weight:900;
+}
+
 .gallery-count{
   text-align:center;color:var(--muted);
   font-size:9px;margin-bottom:22px;
 }
 
 /* EQUIPMENT LIST IN DRAWER */
-
 .specification-box{
   background:#300029;
   border:1px solid var(--border);
@@ -368,7 +463,6 @@ footer{background:#100010;border-top:1px solid var(--border);padding:26px 0}
 }
 
 /* TWO DAY PRICING */
-
 .pricing-box{
   margin-top:20px;
   background:#38002e;
@@ -389,7 +483,6 @@ footer{background:#100010;border-top:1px solid var(--border);padding:26px 0}
 .price-option span{font-size:9px;color:#c5a9c1}
 
 /* DRAWER NAVIGATION */
-
 .setup-navigation{
   display:grid;grid-template-columns:1fr 1fr;
   gap:10px;margin-top:20px;
@@ -406,23 +499,116 @@ footer{background:#100010;border-top:1px solid var(--border);padding:26px 0}
   padding:15px 20px;
   background:#160014;
   border-top:1px solid var(--border);
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:10px;
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:8px;
 }
-.drawer-footer button{width:100%;min-height:46px}
+.drawer-footer button{width:100%;min-height:44px;padding:10px 8px;font-size:9px}
+
+/* MODALS (BOOKING, POLICY, ACCOUNT & ADMIN) */
+.modal-backdrop{
+  position:fixed;inset:0;z-index:160;
+  background:rgba(0,0,0,.84);
+  display:none;align-items:center;justify-content:center;
+  padding:16px;
+}
+.modal-backdrop.active{display:flex}
+.modal-card{
+  width:min(760px,100%);
+  max-height:90dvh;
+  overflow-y:auto;
+  background:#22001f;
+  border:1px solid rgba(234,255,0,.28);
+  border-radius:16px;
+  padding:22px;
+  position:relative;
+}
+.modal-card.wide{width:min(1020px,100%)}
+.modal-top{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+  border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:18px;
+}
+.modal-top small{color:var(--yellow);font-size:9px;font-weight:900;letter-spacing:2px}
+.modal-top h2{font-size:19px;margin-top:5px}
+
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1 / -1}
+.field label{font-size:10px;font-weight:700;color:#ebd3e7}
+.field input,.field select,.field textarea{
+  background:#140013;
+  border:1px solid rgba(255,255,255,.18);
+  color:var(--white);
+  border-radius:9px;
+  padding:10px 12px;
+  font-size:11px;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--yellow);
+}
+.checkbox-row{
+  display:flex;align-items:flex-start;gap:9px;
+  font-size:10px;line-height:1.65;color:#e7cce2;
+}
+.checkbox-row input{margin-top:3px;accent-color:var(--yellow)}
+
+.summary-box{
+  background:#160015;
+  border:1px solid rgba(234,255,0,.3);
+  border-radius:12px;
+  padding:16px;
+  margin-top:16px;
+}
+.summary-row{
+  display:flex;justify-content:space-between;gap:10px;
+  font-size:11px;padding:6px 0;
+  border-bottom:1px dashed rgba(255,255,255,.1);
+}
+.summary-row:last-child{border-bottom:0;font-weight:900;color:var(--yellow);font-size:13px}
+
+.status-banner{
+  padding:10px 12px;border-radius:9px;font-size:10px;line-height:1.6;margin-top:12px;
+}
+.status-ok{background:rgba(54,227,155,.14);border:1px solid rgba(54,227,155,.4);color:#97f8ce}
+.status-warn{background:rgba(255,190,59,.14);border:1px solid rgba(255,190,59,.4);color:#ffd985}
+.status-err{background:rgba(255,92,119,.15);border:1px solid rgba(255,92,119,.45);color:#ffa4b4}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab-btn{
+  background:#34002c;color:#e8cde3;border:1px solid var(--border);
+  border-radius:20px;padding:8px 14px;font-size:10px;font-weight:800;
+}
+.tab-btn.active{background:var(--yellow);color:#180018;border-color:var(--yellow)}
+
+.admin-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px}
+table.data-table{width:100%;border-collapse:collapse;font-size:10px}
+table.data-table th,table.data-table td{
+  padding:10px 11px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;
+  vertical-align:top;
+}
+table.data-table th{background:#31002a;color:var(--yellow);font-weight:800}
+.badge{
+  display:inline-block;padding:3px 8px;border-radius:12px;
+  font-size:8px;font-weight:900;text-transform:uppercase;
+}
+.badge-pending{background:rgba(255,190,59,.2);color:#ffd985}
+.badge-confirmed{background:rgba(54,227,155,.2);color:#8df7c9}
+.badge-cancelled{background:rgba(255,92,119,.2);color:#ffa4b4}
+
+.policy-body{font-size:11px;line-height:1.9;color:#ead4e6}
+.policy-body h3{color:var(--yellow);font-size:13px;margin:16px 0 6px}
+.policy-body ul{margin-left:18px;display:grid;gap:6px}
 
 /* IMAGE LIGHTBOX */
-
 .lightbox{
-  position:fixed;inset:0;z-index:150;
+  position:fixed;inset:0;z-index:200;
   background:rgba(0,0,0,.96);
   display:none;align-items:center;justify-content:center;
-  padding:20px;
+  padding:20px;touch-action:pan-y;
 }
 .lightbox.active{display:flex}
 .lightbox img{
   max-width:95%;max-height:88dvh;
-  object-fit:contain;
+  object-fit:contain;user-select:none;-webkit-user-drag:none;
 }
 .lightbox button{
   position:absolute;top:18px;right:18px;
@@ -430,15 +616,17 @@ footer{background:#100010;border-top:1px solid var(--border);padding:26px 0}
   border-radius:50%;font-size:23px;
 }
 
-/* MOBILE */
+button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-offset:3px}
 
+/* RESPONSIVE */
 @media(max-width:950px){
   .setup-grid{grid-template-columns:repeat(2,1fr)}
   .equipment-grid{grid-template-columns:repeat(2,1fr)}
 }
 
 @media(max-width:650px){
-  .navbar{height:67px}
+  .container{width:min(100% - 30px,1250px)}
+  .navbar{min-height:67px}
   .brand{font-size:19px}
   .menu-toggle{display:block}
   .nav-links{
@@ -448,62 +636,41 @@ footer{background:#100010;border-top:1px solid var(--border);padding:26px 0}
     border:1px solid var(--border);
     border-radius:12px;
     flex-direction:column;align-items:stretch;
-    gap:20px;
+    gap:16px;
   }
   .nav-links.open{display:flex}
   .hero{min-height:475px;background-position:57% center}
   .hero-content{padding:65px 0}
-  .hero h1{font-size:clamp(43px,12vw,65px);letter-spacing:-2px}
+  .hero h1{font-size:clamp(43px,12vw,65px);letter-spacing:-2px;line-height:1.02}
   .section{padding:53px 0}
   .setup-grid{grid-template-columns:1fr;gap:18px}
-  .card-image{height:245px}
+  .setup-card{border-radius:15px}
+  .card-image{height:clamp(210px,62vw,310px)}
   .equipment-grid{grid-template-columns:repeat(2,1fr)}
   .contact-box{display:block;padding:27px}
   .contact-box .btn{margin-top:20px}
-  .footer-inner{flex-direction:column}
-  .drawer{width:100%;border:0}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .drawer{width:100%;border:0;height:100dvh;height:100svh;overscroll-behavior:contain;padding-bottom:env(safe-area-inset-bottom)}
   .drawer-header{padding:13px 17px}
-  .drawer-content{padding:17px}
-  .gallery-slide img,.gallery-slide video{height:260px}
-  .drawer-footer{padding:12px}
+  .drawer-content{padding:15px 14px 24px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .gallery-slide img,.gallery-slide video{height:min(48vh,330px);height:min(48svh,330px);max-width:100%}
+  .gallery-track{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}
+  .gallery-slide{min-width:100%}
+  .gallery-arrow{width:34px;height:34px}
+  .gallery-position{gap:4px}
+  .gallery-video-pill{height:15px;min-width:16px;padding:0 4px;font-size:7px}
+  .drawer-footer{grid-template-columns:1fr;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+  .form-grid{grid-template-columns:1fr}
+  .lightbox{padding:12px}
+  .lightbox img{max-width:100%;max-height:82dvh}
 }
 
-@media(max-width:370px){
-  .card-price{align-items:flex-start}
-  .card-open{padding:9px}
-  .price-option strong{font-size:18px}
-}
-
-/* RESPONSIVE + MOBILE BACK/TOUCH POLISH */
-.gallery-track{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;}
-.drawer{overscroll-behavior:contain;padding-bottom:env(safe-area-inset-bottom);}
-.drawer-content{overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
-.gallery-slide{min-width:100%;}
-.gallery-slide img,.gallery-slide video{max-width:100%;}
-.lightbox{z-index:200;touch-action:pan-y;}
-.lightbox img{user-select:none;-webkit-user-drag:none;}
-button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-offset:3px;}
-@media(max-width:650px){
-  .container{width:min(100% - 30px,1250px);}
-  .hero h1{line-height:1.02;}
-  .setup-card{border-radius:15px;}
-  .card-image{height:clamp(210px,62vw,310px);}
-  .drawer{height:100dvh;height:100svh;}
-  .drawer-content{padding:15px 14px 24px;}
-  .gallery-slide img,.gallery-slide video{height:min(48vh,330px);height:min(48svh,330px);}
-  .drawer-footer{padding:10px 12px calc(10px + env(safe-area-inset-bottom));}
-  .drawer-footer .btn{font-size:9px;padding:12px 8px;}
-  .gallery-arrow{width:34px;height:34px;}
-  .lightbox{padding:12px;}
-  .lightbox img{max-width:100%;max-height:82dvh;}
-}
 @media(max-width:380px){
-  .pricing-grid{gap:8px;}
-  .price-option{padding:12px 9px;}
-  .price-option strong{font-size:17px;}
-  .drawer-header h2{font-size:16px;}
+  .pricing-grid{gap:8px}
+  .price-option{padding:12px 9px}
+  .price-option strong{font-size:17px}
+  .drawer-header h2{font-size:16px}
 }
-
 </style>
 </head>
 
@@ -511,69 +678,81 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-off
 
 <header>
   <div class="container navbar">
-    <a href="#" class="brand">
+    <a href="#home" class="brand">
       HAPPY <span>FLOOR</span> DJ
       <small>SOUND · LIGHT · CELEBRATION</small>
     </a>
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
 
     <nav class="nav-links" id="navLinks">
       <a href="#home">HOME</a>
       <a href="#setups">SETUPS</a>
+      <a href="#rentals">RENTALS</a>
       <a href="#services">SERVICES</a>
       <a href="#contact">CONTACT</a>
-      <a href="#setups" class="nav-highlight">EXPLORE ↗</a>
+      <button type="button" class="nav-btn nav-ghost" id="accountBtn">MY BOOKINGS</button>
+      <button type="button" class="nav-btn nav-ghost" id="adminOpenBtn">ADMIN</button>
+      <button type="button" class="nav-btn nav-highlight" id="quickBookBtn">BOOK NOW ↗</button>
     </nav>
   </div>
 </header>
 
-
 <!-- HERO -->
-
 <section class="hero" id="home">
   <div class="container hero-content">
-    <div class="eyebrow">PROFESSIONAL DJ SOUND & EVENT PRODUCTION</div>
+    <div class="eyebrow">PROFESSIONAL DJ SOUND & EVENT PRODUCTION · PILANI</div>
     <h1>FEEL THE<br><span>BEAT.</span><br>LIVE THE NIGHT.</h1>
     <p>
       Powerful sound. Spectacular lighting. Unforgettable celebrations.
-      Explore our collection of professionally designed DJ setups
-      and find the perfect experience for your event.
+      Explore our DJ setups, individual sound & light rentals, and instant
+      date availability across Pilani and Jhunjhunu.
     </p>
     <div class="hero-actions">
       <a href="#setups" class="btn btn-yellow">EXPLORE SETUPS ↗</a>
+      <button type="button" class="btn btn-outline" id="heroBookBtn">BOOK EVENT DATE</button>
       <a href="#contact" class="btn btn-outline">CONTACT US</a>
     </div>
   </div>
 </section>
 
-
-<!-- ALL 8 SETUPS -->
-
+<!-- SETUPS -->
 <section class="section" id="setups">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">OUR COLLECTION</div>
       <h2>Find your perfect setup.</h2>
       <p>
-        Explore our eight exclusive DJ arrangements.
-        Every setup includes its own gallery, live videos,
-        equipment specifications and transparent pricing.
+        Explore our DJ arrangements with live photos, demo videos,
+        equipment specifications, and transparent pricing for 1 day, 2 days, or extended multi-day events.
       </p>
     </div>
     <div class="setup-grid" id="setupGrid"></div>
   </div>
 </section>
 
+<!-- STANDALONE RENTALS (SPEAKERS, BASS, CRP, PAR LIGHTS) -->
+<section class="section" id="rentals">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">INDIVIDUAL EQUIPMENT & ADD-ONS</div>
+      <h2>Speakers, Bass & Stage Lights.</h2>
+      <p>
+        Need extra bass, speakers, CRP lights, or PAR lights alongside a setup or on their own?
+        Browse individual items below (new items can also be added anytime from the Admin Panel).
+      </p>
+    </div>
+    <div class="rentals-grid" id="rentalsGrid"></div>
+  </div>
+</section>
 
 <!-- SERVICES -->
-
 <section class="section equipment-section" id="services">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">OUR SERVICES</div>
       <h2>Everything in one experience.</h2>
-      <p>Every item is positioned and arranged according to the selected setup design.</p>
+      <p>Every item is positioned and arranged according to the selected setup design and capacity rules.</p>
     </div>
 
     <div class="equipment-grid">
@@ -595,64 +774,83 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-off
       <div class="equipment-box">
         <div class="symbol">▦</div>
         <h3>Truss & Stage</h3>
-        <p>Single-sided and 4×4 tower structures with custom arrangements.</p>
+        <p>Single-sided (max 2/day) and 4×4 tower structures (max 1/day).</p>
       </div>
     </div>
   </div>
 </section>
 
-
 <!-- CONTACT -->
-
 <section class="contact-section" id="contact">
   <div class="container">
     <div class="contact-box">
       <div>
         <div class="eyebrow">LET'S MAKE IT UNFORGETTABLE</div>
         <h2>Your event. Our sound.</h2>
-        <p>Contact Happy Floor DJ Sound for bookings, pricing and availability.</p>
+        <p>
+          Proprietor: <strong>Ashok Kumar</strong> · Happy Floor DJ Sound, Pilani, Jhunjhunu, Rajasthan.
+          Reach out for event bookings, multi-day packages, or equipment availability.
+        </p>
+        <div class="contact-details">
+          <div class="contact-chip">
+            <strong>PRIMARY PHONE & WHATSAPP</strong>
+            +91 9529102585
+          </div>
+          <div class="contact-chip">
+            <strong>SECONDARY PHONE</strong>
+            +91 9352450084
+          </div>
+          <div class="contact-chip">
+            <strong>EMAIL</strong>
+            krishansaini5152@gmail.com
+          </div>
+          <div class="contact-chip">
+            <strong>LOCATION COORDINATES</strong>
+            28°19'55.3"N 75°34'00.3"E (Pilani)
+          </div>
+        </div>
       </div>
       <a class="btn btn-yellow"
          href="https://wa.me/919529102585?text=Hello%20Happy%20Floor%20DJ%20Sound"
-         target="_blank">WHATSAPP US ↗</a>
+         target="_blank" rel="noopener">WHATSAPP US ↗</a>
     </div>
   </div>
 </section>
 
-
 <footer>
   <div class="container footer-inner">
-    <span>© <span id="year"></span> HAPPY FLOOR DJ SOUND</span>
-    <span>PILANI, RAJASTHAN · INDIA</span>
-    <span>POWERED BY MUSIC ♫</span>
+    <span>© <span id="year"></span> HAPPY FLOOR DJ SOUND · PROPRIETOR: ASHOK KUMAR</span>
+    <div class="footer-links">
+      <button type="button" data-policy="terms">TERMS & CONDITIONS</button>
+      <button type="button" data-policy="refund">ADVANCE & RESCHEDULE POLICY</button>
+      <button type="button" data-policy="liability">VENUE POWER & DAMAGE LIABILITY</button>
+      <button type="button" data-policy="privacy">PRIVACY POLICY</button>
+    </div>
+    <span>PILANI, RAJASTHAN · POWERED BY MUSIC ♫</span>
   </div>
 </footer>
 
-
 <!-- SLIDING DRAWER -->
-
 <div class="overlay" id="overlay"></div>
 
-<aside class="drawer" id="drawer">
-
+<aside class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer-header">
     <div>
       <small id="drawerNumber">SETUP 01</small>
       <h2 id="drawerTitle">Setup Name</h2>
     </div>
-    <button class="close-btn" id="closeDrawer">×</button>
+    <button type="button" class="close-btn" id="closeDrawer" aria-label="Close setup drawer">×</button>
   </div>
 
   <div class="drawer-content">
-
     <p class="drawer-description" id="drawerDescription"></p>
 
     <div class="drawer-label">PHOTO & VIDEO GALLERY</div>
 
     <div class="gallery-frame">
-      <button class="gallery-arrow prev" id="galleryPrev">‹</button>
+      <button type="button" class="gallery-arrow prev" id="galleryPrev" aria-label="Previous media">‹</button>
       <div class="gallery-track" id="galleryTrack"></div>
-      <button class="gallery-arrow next" id="galleryNext">›</button>
+      <button type="button" class="gallery-arrow next" id="galleryNext" aria-label="Next media">›</button>
     </div>
 
     <div class="gallery-position" id="galleryDots"></div>
@@ -662,9 +860,8 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-off
       <h3>⚙ EQUIPMENT SPECIFICATIONS</h3>
       <ul class="spec-list" id="specList"></ul>
       <p class="spec-note">
-        All equipment is positioned and arranged according to
-        the selected setup design. Final placement follows the
-        actual design shown in the gallery.
+        All equipment is positioned and arranged according to the selected setup design.
+        Client must provide safe power supply and is responsible for any equipment damage or misuse.
       </p>
     </div>
 
@@ -679,331 +876,545 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-off
         <div class="price-option">
           <small>TWO DAYS</small>
           <strong id="priceTwo">₹21,000</strong>
-          <span>2 Days Booking</span>
+          <span>2 Days Booking (3+ days supported)</span>
         </div>
       </div>
     </div>
 
     <div class="setup-navigation">
-      <button id="previousSetup">← PREVIOUS SETUP</button>
-      <button id="nextSetup">NEXT SETUP →</button>
+      <button type="button" id="previousSetup">← PREVIOUS SETUP</button>
+      <button type="button" id="nextSetup">NEXT SETUP →</button>
     </div>
-
   </div>
 
   <div class="drawer-footer">
-    <button class="btn btn-yellow" id="whatsappBtn">WHATSAPP INQUIRY ↗</button>
-    <button class="btn btn-outline" id="shareBtn">SHARE SETUP ↗</button>
+    <button type="button" class="btn btn-yellow" id="drawerBookBtn">BOOK SETUP ↗</button>
+    <button type="button" class="btn btn-outline" id="whatsappBtn">WHATSAPP ↗</button>
+    <button type="button" class="btn btn-outline" id="shareBtn">SHARE ↗</button>
   </div>
-
 </aside>
 
+<!-- BOOKING MODAL -->
+<div class="modal-backdrop" id="bookingModal">
+  <div class="modal-card">
+    <div class="modal-top">
+      <div>
+        <small>INSTANT AVAILABILITY & ADVANCE CALCULATION</small>
+        <h2>Book Event / Equipment — Happy Floor DJ Sound</h2>
+      </div>
+      <button type="button" class="close-btn" id="closeBookingModal">×</button>
+    </div>
+
+    <form id="bookingForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="bookSetupSelect">Main DJ Setup (Optional if booking rentals only)</label>
+          <select id="bookSetupSelect"></select>
+        </div>
+
+        <div class="field">
+          <label for="bookDays">Number of Days</label>
+          <select id="bookDays">
+            <option value="1">1 Day</option>
+            <option value="2">2 Days</option>
+            <option value="3">3 Days</option>
+            <option value="4">4 Days</option>
+            <option value="5">5 Days</option>
+            <option value="custom">Custom Days (3–15)</option>
+          </select>
+        </div>
+
+        <div class="field" id="customDaysWrap" style="display:none">
+          <label for="customDaysInput">Custom Number of Days (3 to 15)</label>
+          <input type="number" id="customDaysInput" min="3" max="15" value="3">
+        </div>
+
+        <div class="field">
+          <label for="bookStartDate">Start / Event Date</label>
+          <input type="date" id="bookStartDate" required>
+        </div>
+
+        <div class="field full">
+          <label>Individual Equipment / Add-on Rentals (Optional — multiple allowed)</label>
+          <div id="rentalCheckboxes" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;margin-top:4px"></div>
+        </div>
+
+        <div class="field">
+          <label for="custName">Your Full Name</label>
+          <input type="text" id="custName" required placeholder="Enter full name">
+        </div>
+
+        <div class="field">
+          <label for="custPhone">Phone / WhatsApp Number</label>
+          <input type="tel" id="custPhone" required placeholder="10-digit mobile number">
+        </div>
+
+        <div class="field full">
+          <label for="custVenue">Event Venue & City / Village</label>
+          <input type="text" id="custVenue" required placeholder="e.g. Marriage Garden, Pilani, Jhunjhunu">
+        </div>
+
+        <div class="field full">
+          <label for="custNotes">Event Notes (Timing, Stage / Power Details)</label>
+          <textarea id="custNotes" rows="2" placeholder="Any specific timing or stage details..."></textarea>
+        </div>
+
+        <div class="field full">
+          <label class="checkbox-row">
+            <input type="checkbox" id="policyAgree" required>
+            <span>
+              I agree that the <strong>advance payment is non-refundable</strong>, date changes require <strong>owner approval</strong>,
+              and I am responsible for proper <strong>venue electrical power & any damage/loss to DJ/sound/lighting equipment</strong>.
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div id="availabilityBanner" class="status-banner status-warn">
+        Select a date and setup/rental items to check capacity rules (4×4 Tower: max 1/day · Single-Sided Tower: max 2/day).
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-row"><span>Selected Package / Rentals Total</span><strong id="sumTotal">₹0</strong></div>
+        <div class="summary-row"><span>Booking Duration</span><strong id="sumDays">1 Day</strong></div>
+        <div class="summary-row"><span>Required Advance Payment</span><strong id="sumAdvance">₹2,000</strong></div>
+        <div class="summary-row"><span>Balance Payable at Event</span><strong id="sumBalance">₹0</strong></div>
+      </div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+        <button type="submit" class="btn btn-yellow" id="submitBookingBtn">CONFIRM BOOKING & ADVANCE REQUEST ↗</button>
+        <button type="button" class="btn btn-outline" id="bookViaWhatsappBtn">SEND SUMMARY ON WHATSAPP</button>
+      </div>
+      <div id="gatewayNote" class="status-banner status-warn" style="margin-top:12px">
+        Online gateway is currently in pre-KYC preparation mode. Your booking record is saved with advance amount calculated; once Udyam & payment gateway KYC are completed, live checkout will trigger automatically here.
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- CUSTOMER ACCOUNT & RESCHEDULE MODAL -->
+<div class="modal-backdrop" id="accountModal">
+  <div class="modal-card wide">
+    <div class="modal-top">
+      <div>
+        <small>USER AUTHENTICATION & MY BOOKINGS</small>
+        <h2>Customer Account & Reschedule Requests</h2>
+      </div>
+      <button type="button" class="close-btn" id="closeAccountModal">×</button>
+    </div>
+
+    <div id="userAuthBox" style="margin-bottom:18px">
+      <div class="form-grid">
+        <div class="field">
+          <label for="userEmail">Email</label>
+          <input type="email" id="userEmail" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="userPass">Password</label>
+          <input type="password" id="userPass" placeholder="At least 6 characters">
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+        <button type="button" class="btn btn-yellow btn-sm" id="userLoginBtn">SIGN IN</button>
+        <button type="button" class="btn btn-outline btn-sm" id="userRegisterBtn">CREATE ACCOUNT</button>
+        <button type="button" class="btn btn-outline btn-sm" id="userGoogleBtn">CONTINUE WITH GOOGLE</button>
+        <button type="button" class="btn btn-danger btn-sm" id="userLogoutBtn" style="display:none">SIGN OUT</button>
+      </div>
+      <div id="userAuthStatus" class="status-banner status-warn">Sign in to view your bookings or request a date reschedule (requires owner approval).</div>
+    </div>
+
+    <div class="admin-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Booking</th>
+            <th>Dates</th>
+            <th>Total / Advance</th>
+            <th>Status</th>
+            <th>Reschedule Request</th>
+          </tr>
+        </thead>
+        <tbody id="userBookingsBody">
+          <tr><td colspan="5">Sign in above to view your bookings.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN MODAL -->
+<div class="modal-backdrop" id="adminModal">
+  <div class="modal-card wide">
+    <div class="modal-top">
+      <div>
+        <small>RESTRICTED OWNER CONSOLE · ashokganga1122@gmail.com</small>
+        <h2>Happy Floor DJ Sound — Admin Panel</h2>
+      </div>
+      <button type="button" class="close-btn" id="closeAdminModal">×</button>
+    </div>
+
+    <div id="adminLoginPanel" style="margin-bottom:18px">
+      <div class="form-grid">
+        <div class="field">
+          <label for="adminEmailInput">Admin Email</label>
+          <input type="email" id="adminEmailInput" value="ashokganga1122@gmail.com">
+        </div>
+        <div class="field">
+          <label for="adminPassInput">Password</label>
+          <input type="password" id="adminPassInput" placeholder="Enter password">
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+        <button type="button" class="btn btn-yellow btn-sm" id="adminEmailLoginBtn">ADMIN EMAIL LOGIN</button>
+        <button type="button" class="btn btn-outline btn-sm" id="adminGoogleLoginBtn">ADMIN GOOGLE SIGN-IN</button>
+        <button type="button" class="btn btn-danger btn-sm" id="adminLogoutBtn" style="display:none">ADMIN SIGN OUT</button>
+      </div>
+      <div id="adminAuthStatus" class="status-banner status-warn">Only ashokganga1122@gmail.com has admin privileges.</div>
+    </div>
+
+    <div id="adminConsole" style="display:none">
+      <div class="tabs">
+        <button type="button" class="tab-btn active" data-admin-tab="bookingsTab">BOOKINGS & RESCHEDULES</button>
+        <button type="button" class="tab-btn" data-admin-tab="advanceTab">ADVANCE RATES</button>
+        <button type="button" class="tab-btn" data-admin-tab="rentalsTab">RENTALS & SETUPS</button>
+        <button type="button" class="tab-btn" data-admin-tab="blockTab">BLOCK DATES</button>
+      </div>
+
+      <!-- TAB 1: BOOKINGS -->
+      <div id="bookingsTab" class="admin-tab">
+        <div class="admin-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Customer & Contact</th>
+                <th>Package / Rentals</th>
+                <th>Dates & Days</th>
+                <th>Total / Advance</th>
+                <th>Status & Reschedule</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminBookingsBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB 2: ADMIN-EDITABLE ADVANCE RATES -->
+      <div id="advanceTab" class="admin-tab" style="display:none">
+        <p style="font-size:11px;color:var(--muted);margin-bottom:14px">
+          Type your desired advance payment amounts below. These apply live to new bookings on the website.
+        </p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="advStandardInput">Advance Rate for Bookings ≤ ₹25,000 (₹)</label>
+            <input type="number" id="advStandardInput" min="0" step="100" value="2000">
+          </div>
+          <div class="field">
+            <label for="advHighInput">Advance Rate for Bookings > ₹25,000 (₹)</label>
+            <input type="number" id="advHighInput" min="0" step="100" value="5000">
+          </div>
+          <div class="field full">
+            <label for="advExtraDayInput">Additional Advance Per Extra Day Beyond 2 Days (₹)</label>
+            <input type="number" id="advExtraDayInput" min="0" step="100" value="0">
+          </div>
+        </div>
+        <button type="button" class="btn btn-yellow btn-sm" id="saveAdvanceRatesBtn" style="margin-top:14px">SAVE ADVANCE RATES</button>
+        <div id="advanceSaveMsg"></div>
+      </div>
+
+      <!-- TAB 3: ADD STANDALONE RENTALS (SPEAKERS, BASS, CRP, PAR LIGHTS) -->
+      <div id="rentalsTab" class="admin-tab" style="display:none">
+        <p style="font-size:11px;color:var(--muted);margin-bottom:14px">
+          Add standalone rental items (speakers, bass/subwoofers, CRP lights, PAR lights, etc.) or extra setups.
+        </p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="newRentalName">Item / Service Name</label>
+            <input type="text" id="newRentalName" placeholder="e.g. PAR Lights Set (6 pcs) / Bass Subwoofer">
+          </div>
+          <div class="field">
+            <label for="newRentalCategory">Category</label>
+            <select id="newRentalCategory">
+              <option value="LIGHTS">CRP / PAR / Stage Lights</option>
+              <option value="SOUND">Speakers / Bass / Subwoofer</option>
+              <option value="EFFECTS">Fog / Bubble / Special Effects</option>
+              <option value="OTHER">Other Equipment Rental</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="newRentalPrice">Per-Day Rate (₹)</label>
+            <input type="number" id="newRentalPrice" min="100" step="100" placeholder="e.g. 2500">
+          </div>
+          <div class="field">
+            <label for="newRentalMaxPerDay">Max Bookings Allowed Per Day</label>
+            <input type="number" id="newRentalMaxPerDay" min="1" max="50" value="5">
+          </div>
+          <div class="field full">
+            <label for="newRentalDesc">Short Description</label>
+            <input type="text" id="newRentalDesc" placeholder="e.g. High-brightness stage lights with DMX control">
+          </div>
+        </div>
+        <button type="button" class="btn btn-yellow btn-sm" id="addRentalItemBtn" style="margin-top:14px">ADD RENTAL ITEM</button>
+        <div id="rentalAdminList" style="margin-top:18px;display:grid;gap:8px"></div>
+      </div>
+
+      <!-- TAB 4: BLOCK DATES -->
+      <div id="blockTab" class="admin-tab" style="display:none">
+        <div class="form-grid">
+          <div class="field">
+            <label for="blockDateInput">Date to Block</label>
+            <input type="date" id="blockDateInput">
+          </div>
+          <div class="field">
+            <label for="blockScopeSelect">Applies To</label>
+            <select id="blockScopeSelect">
+              <option value="all">All Setups & Bookings</option>
+              <option value="4x4">All 4×4 Tower Setups Only</option>
+              <option value="single">All Single-Sided Tower Setups Only</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="blockReasonInput">Reason (Optional)</label>
+            <input type="text" id="blockReasonInput" placeholder="e.g. Maintenance / Owner Reserved">
+          </div>
+        </div>
+        <button type="button" class="btn btn-yellow btn-sm" id="addBlockDateBtn" style="margin-top:14px">BLOCK DATE</button>
+        <div id="blockedDatesList" style="margin-top:16px;display:grid;gap:8px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEGAL POLICY MODAL -->
+<div class="modal-backdrop" id="policyModal">
+  <div class="modal-card">
+    <div class="modal-top">
+      <div>
+        <small>HAPPY FLOOR DJ SOUND · LEGAL & OPERATING TERMS</small>
+        <h2 id="policyTitle">Policy</h2>
+      </div>
+      <button type="button" class="close-btn" id="closePolicyModal">×</button>
+    </div>
+    <div class="policy-body" id="policyContent"></div>
+  </div>
+</div>
 
 <!-- IMAGE LIGHTBOX -->
-
 <div class="lightbox" id="lightbox">
-  <button id="closeLightbox">×</button>
+  <button type="button" id="closeLightbox" aria-label="Close photo viewer">×</button>
   <img src="" id="lightboxImage" alt="DJ setup enlarged photo">
 </div>
 
-
-<script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  collection,
+  getDocs,
+  onSnapshot,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 /* ==========================================
-   BUSINESS INFORMATION
+   BUSINESS & FIREBASE CONFIGURATION
 ========================================== */
 
 const BUSINESS = {
   name: "Happy Floor DJ Sound",
+  owner: "Ashok Kumar",
+  adminEmail: "ashokganga1122@gmail.com",
   phone: "919529102585",
-  location: "Pilani, Rajasthan"
+  secondaryPhone: "919352450084",
+  email: "krishansaini5152@gmail.com",
+  coordinates: "28°19'55.3\"N 75°34'00.3\"E",
+  location: "Pilani, Jhunjhunu, Rajasthan"
 };
 
+const firebaseConfig = {
+  apiKey: "AIzaSyA-pHnDFNl8-BBdUVwkwxOxi1tUJfGYIs8",
+  authDomain: "happy-floor-dj-sound.firebaseapp.com",
+  projectId: "happy-floor-dj-sound",
+  storageBucket: "happy-floor-dj-sound.firebasestorage.app",
+  messagingSenderId: "491488555142",
+  appId: "1:491488555142:web:442677ad0a78996e77e107",
+  measurementId: "G-G8KBH8044L"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const googleProvider = new GoogleAuthProvider();
 
 /* ==========================================
-   SETUP DATABASE
-
-   All media is stored together in each setup.
-   Paths are relative to index.html.
-
-   Image and video files remain in their
-   original Setup-1 ... Setup-8 folders.
+   SETUP DATABASE (PRESERVED FROM UPDATED.HTML)
 ========================================== */
 
 const setups = [
-
-{
-  id:1,
-  name:"Classic DJ Setup",
-  category:"CLASSIC COLLECTION",
-
-  description:
-  "A beautifully arranged DJ setup with coordinated sound, lighting and stage elements. Designed for an attractive and energetic event experience.",
-
-  priceOne:13000,
-  priceTwo:21000,
-
-  specs:[
-    ["CRP Lights","2"],
-    ["Speakers","4"],
-    ["Base / Subwoofer","1"],
-    ["Mirror Ball","1"],
-    ["PAR Lights","12"],
-    ["Tower","Single-sided tower"]
-  ],
-
-  media:[
-    {type:"image",src:"videos/Setup-1/cover.jpg",title:"Setup Cover"},
-    {type:"image",src:"videos/Setup-1/IMG-20241008-WA000.jpg",title:"Setup View 01"},
-    {type:"image",src:"videos/Setup-1/IMG-20241008-WA0008.jpg",title:"Setup View 02"},
-    {type:"video",src:"videos/Setup-1/13-21.mp4",title:"Live Setup Demo"}
-  ]
-},
-
-{
-  id:2,
-  name:"Premium DJ Setup",
-  category:"PREMIUM COLLECTION",
-
-  description:
-  "An upgraded sound and lighting arrangement with additional speakers and a fog machine, designed for a more immersive event atmosphere.",
-
-  priceOne:15000,
-  priceTwo:25000,
-
-  specs:[
-    ["CRP Lights","2"],
-    ["Speakers","6"],
-    ["Base / Subwoofer","1"],
-    ["Mirror Ball","1"],
-    ["PAR Lights","12"],
-    ["Fog Machine","1"],
-    ["Tower","Single-sided tower"]
-  ],
-
-  media:[
-    {type:"image",src:"videos/Setup-2/cover.jpg",title:"Setup Cover"},
-    {type:"image",src:"videos/Setup-2/IMG_20231208_152248.jpg",title:"Setup View 01"},
-    {type:"image",src:"videos/Setup-2/IMG-20231130-WA0003.jpg",title:"Setup View 02"},
-    {type:"image",src:"videos/Setup-2/IMG-20240114-WA0001.jpg",title:"Setup View 03"},
-    {type:"image",src:"videos/Setup-2/IMG-20240204-WA0000.jpg",title:"Setup View 04"},
-    {type:"image",src:"videos/Setup-2/IMG-20240204-WA0002.jpg",title:"Setup View 05"},
-    {type:"image",src:"videos/Setup-2/IMG-20240204-WA0003.jpg",title:"Setup View 06"},
-    {type:"image",src:"videos/Setup-2/IMG-20240204-WA0004.jpg",title:"Setup View 07"},
-    {type:"image",src:"videos/Setup-2/IMG-20240511-WA0003.jpg",title:"Setup View 08"},
-
-    {type:"video",src:"videos/Setup-2/15-25.mp4",title:"Live Demo 01"},
-    {type:"video",src:"videos/Setup-2/15--25.mp4",title:"Live Demo 02"},
-    {type:"video",src:"videos/Setup-2/VID-20230214-WA0005.mp4",title:"Live Demo 04"},
-    {type:"video",src:"videos/Setup-2/VID-20230503-WA0005.mp4",title:"Live Demo 05"},
-    {type:"video",src:"videos/Setup-2/VID-20230512-WA0006.mp4",title:"Live Demo 06"},
-    {type:"video",src:"videos/Setup-2/VID-20231124-WA0000.mp4",title:"Live Demo 07"},
-    {type:"video",src:"videos/Setup-2/VID-20231124-WA0002.mp4",title:"Live Demo 08"}
-  ]
-},
-
-{
-  id:3,
-  name:"Advanced DJ Setup",
-  category:"ADVANCED COLLECTION",
-
-  description:
-  "A stronger lighting and sound arrangement featuring additional CRP lights, six speakers and a fog machine.",
-
-  priceOne:18000,
-  priceTwo:31000,
-
-  specs:[
-    ["CRP Lights","4"],
-    ["Speakers","6"],
-    ["Base / Subwoofer","1"],
-    ["Mirror Ball","1"],
-    ["PAR Lights","12"],
-    ["Fog Machine","1"],
-    ["Tower","Single-sided tower"]
-  ],
-
-  media:[
-    {type:"image",src:"videos/Setup-3/cover.jpg",title:"Setup Cover"},
-    {type:"image",src:"videos/Setup-3/IMG-20231211-WA0009.jpg",title:"Setup View"},
-    {type:"video",src:"videos/Setup-3/18-31.mp4",title:"Live Demo 01"},
-    {type:"video",src:"videos/Setup-3/18--31.mp4",title:"Live Demo 02"}
-  ]
-},
-
-{
-  id:4,
-  name:"Royal Dual Layer Setup",
-  category:"ROYAL COLLECTION",
-
-  description:
-  "A dual-layer single-sided tower arrangement with enhanced lighting, fog and bubble effects for a distinctive stage design.",
-
-  priceOne:21000,
-  priceTwo:31000,
-
-  specs:[
-    ["CRP Lights","4"],
-    ["Speakers","4–6"],
-    ["Base / Subwoofer","1–2"],
-    ["Mirror Ball","1"],
-    ["Bubble Maker Machine","1"],
-    ["PAR Lights","18–20"],
-    ["Fog Machine","1"],
-    ["Tower","Single-sided, dual layer"]
-  ],
-
-  media:[
-    {type:"image",src:"videos/Setup-4/cover.jpg",title:"Setup Cover"},
-    {type:"image",src:"videos/Setup-4/image.jpg",title:"Setup View"},
-    {type:"video",src:"videos/Setup-4/21-31.mp4",title:"Live Setup Demo"}
-  ]
-},
-
-{
-  id:5,
-  name:"Grand 4×4 Tower Setup",
-  category:"GRAND COLLECTION",
-
-  description:
-  "A grand 4×4 tower arrangement with multiple speaker and lighting combinations, two mirror balls and special effects. Available with or without ring.",
-
-  priceOne:25000,
-  priceTwo:40000,
-
-  specs:[
-    ["CRP Lights","4–6"],
-    ["Speakers","4 + 2 liner speakers"],
-    ["Base / Subwoofer","2"],
-    ["Mirror Balls","2"],
-    ["PAR Lights","16–24"],
-    ["Fog Machine","1"],
-    ["Bubble Maker Machine","1"],
-    ["Tower","4×4, with or without ring"]
-  ],
-
-  media:[
-    {type:"image",src:"videos/Setup-5/cover.webp",title:"Setup Cover"},
-    {type:"image",src:"videos/Setup-5/IMG20241121153504.jpg",title:"Setup View 01"},
-    {type:"image",src:"videos/Setup-5/IMG20241206150325.jpg",title:"Setup View 02"},
-    {type:"image",src:"videos/Setup-5/IMG20241206150342.jpg",title:"Setup View 03"},
-    {type:"image",src:"videos/Setup-5/IMG20241206150403.jpg",title:"Setup View 04"},
-    {type:"image",src:"videos/Setup-5/IMG20241206151103.jpg",title:"Setup View 05"},
-    {type:"image",src:"videos/Setup-5/IMG20241206151113.jpg",title:"Setup View 06"},
-    {type:"image",src:"videos/Setup-5/IMG20241206151146.jpg",title:"Setup View 07"},
-    {type:"image",src:"videos/Setup-5/IMG20241206151300.jpg",title:"Setup View 08"},
-    {type:"image",src:"videos/Setup-5/Instagram - 1757588184894(WEBP).webp",title:"Additional View 01"},
-    {type:"image",src:"videos/Setup-5/null_1(WEBP).webp",title:"Additional View 02"},
-    {type:"image",src:"videos/Setup-5/null_2(WEBP).webp",title:"Additional View 03"},
-    {type:"video",src:"videos/Setup-5/25-40.mp4",title:"Live Demo 01"},
-    {type:"video",src:"videos/Setup-5/25---40.mp4",title:"Live Demo 02"}
-  ]
-},
-
-{
-  id:6,
-  name:"Elite 4×4 Tower Setup",
-  category:"ELITE COLLECTION",
-
-  description:
-  "An elite sound arrangement with additional line speakers, powerful lighting, mirror-ball effects and a complete 4×4 tower.",
-
-  priceOne:30000,
-  priceTwo:40000,
-
-  specs:[
-    ["CRP Lights","4"],
-    ["Speakers","4 + 4–6 liner speakers"],
-    ["Base / Subwoofer","2"],
-    ["Mirror Balls","1–2"],
-    ["PAR Lights","18–24"],
-    ["Fog Machine","1"],
-    ["Bubble Maker Machine","Included"],
-    ["Tower","4×4 tower"]
-  ],
-
-  media:[
-    {type:"image",src:"videos/Setup-6/cover.png",title:"Setup Cover"},
-    {type:"video",src:"videos/Setup-6/30-40.mp4",title:"Live Demo 01"},
-    {type:"video",src:"videos/Setup-6/30--40.mp4",title:"Live Demo 02"}
-  ]
-},
-
-{
-  id:7,
-  name:"Signature Ring Tower Setup",
-  category:"SIGNATURE COLLECTION",
-
-  description:
-  "A signature 4×4 ring tower arrangement with eight CRP lights, additional line speakers and a spectacular special-effects combination.",
-
-  priceOne:30000,
-  priceTwo:45000,
-
-  specs:[
-    ["CRP Lights","8"],
-    ["Speakers","6–8 + 2 liner speakers"],
-    ["Base / Subwoofer","1–2"],
-    ["Mirror Balls","1–2"],
-    ["PAR Lights","18–24"],
-    ["Fog Machine","1"],
-    ["Bubble Maker Machine","Included"],
-    ["Tower","4×4 tower with ring"]
-  ],
-
-  media:[
-    {type:"image",src:"videos/Setup-7/cover.jpg",title:"Setup Cover"},
-    {type:"image",src:"videos/Setup-7/IMG_20240102_104626.jpg",title:"Setup View 01"},
-    {type:"image",src:"videos/Setup-7/IMG-20231204-WA0001.jpg",title:"Setup View 02"},
-    {type:"image",src:"videos/Setup-7/IMG-20231204-WA0002.jpg",title:"Setup View 03"},
-    {type:"image",src:"videos/Setup-7/IMG-20240225-WA0027.jpg",title:"Setup View 04"},
-    {type:"video",src:"videos/Setup-7/30--45.mp4",title:"Live Demo 01"},
-    {type:"video",src:"videos/Setup-7/VID_20240101_214238.mp4",title:"Live Demo 04"},
-    {type:"video",src:"videos/Setup-7/VID-20230515-WA0004.mp4",title:"Live Demo 06"},
-    {type:"video",src:"videos/Setup-7/VID-20230527-WA0022.mp4",title:"Live Demo 07"},
-    {type:"video",src:"videos/Setup-7/VID-20230527-WA0024.mp4",title:"Live Demo 08"},
-    {type:"video",src:"videos/Setup-7/VID-20230527-WA0026.mp4",title:"Live Demo 09"},
-    {type:"video",src:"videos/Setup-7/VID-20240103-WA0003.mp4",title:"Live Demo 10"},
-    {type:"video",src:"videos/Setup-7/VID-20240225-WA0029.mp4",title:"Live Demo 11"}
-  ]
-},
-
-{
-  id:8,
-  name:"Ultimate 4×4 Tower Setup",
-  category:"ULTIMATE COLLECTION",
-
-  description:
-  "The ultimate stage arrangement with twelve CRP lights, six speakers, two line speakers and a complete 4×4 tower with special effects.",
-
-  priceOne:30000,
-  priceTwo:50000,
-
-  specs:[
-    ["CRP Lights","12"],
-    ["Speakers","6 + 2 liner speakers"],
-    ["Base / Subwoofer","1–2"],
-    ["Mirror Balls","1–2"],
-    ["PAR Lights","18–24"],
-    ["Fog Machine","1"],
-    ["Bubble Maker Machine","Included"],
-    ["Tower","4×4 tower"]
-  ],
-
-  media:[
-    {type:"image",src:"videos/Setup-8/cover.png",title:"Setup Cover"},
-    {type:"video",src:"videos/Setup-8/35-50.mp4",title:"Live Setup Demo"}
-  ]
-}
-
+  {
+    id:1, name:"Classic DJ Setup", category:"CLASSIC COLLECTION", towerType:"single", maxPerDay:2,
+    description:"A beautifully arranged DJ setup with coordinated sound, lighting and stage elements. Designed for an attractive and energetic event experience.",
+    priceOne:13000, priceTwo:21000,
+    specs:[["CRP Lights","2"],["Speakers","4"],["Base / Subwoofer","1"],["Mirror Ball","1"],["PAR Lights","12"],["Tower","Single-sided tower"]],
+    media:[
+      {type:"image",src:"videos/Setup-1/cover.jpg",title:"Setup Cover"},
+      {type:"image",src:"videos/Setup-1/IMG-20241008-WA000.jpg",title:"Setup View 01"},
+      {type:"image",src:"videos/Setup-1/IMG-20241008-WA0008.jpg",title:"Setup View 02"},
+      {type:"video",src:"videos/Setup-1/13-21.mp4",title:"Live Setup Demo"}
+    ]
+  },
+  {
+    id:2, name:"Premium DJ Setup", category:"PREMIUM COLLECTION", towerType:"single", maxPerDay:2,
+    description:"An upgraded sound and lighting arrangement with additional speakers and a fog machine, designed for a more immersive event atmosphere.",
+    priceOne:15000, priceTwo:25000,
+    specs:[["CRP Lights","2"],["Speakers","6"],["Base / Subwoofer","1"],["Mirror Ball","1"],["PAR Lights","12"],["Fog Machine","1"],["Tower","Single-sided tower"]],
+    media:[
+      {type:"image",src:"videos/Setup-2/cover.jpg",title:"Setup Cover"},
+      {type:"image",src:"videos/Setup-2/IMG_20231208_152248.jpg",title:"Setup View 01"},
+      {type:"image",src:"videos/Setup-2/IMG-20231130-WA0003.jpg",title:"Setup View 02"},
+      {type:"image",src:"videos/Setup-2/IMG-20240114-WA0001.jpg",title:"Setup View 03"},
+      {type:"image",src:"videos/Setup-2/IMG-20240204-WA0000.jpg",title:"Setup View 04"},
+      {type:"image",src:"videos/Setup-2/IMG-20240204-WA0002.jpg",title:"Setup View 05"},
+      {type:"image",src:"videos/Setup-2/IMG-20240204-WA0003.jpg",title:"Setup View 06"},
+      {type:"image",src:"videos/Setup-2/IMG-20240204-WA0004.jpg",title:"Setup View 07"},
+      {type:"image",src:"videos/Setup-2/IMG-20240511-WA0003.jpg",title:"Setup View 08"},
+      {type:"video",src:"videos/Setup-2/15-25.mp4",title:"Live Demo 01"},
+      {type:"video",src:"videos/Setup-2/15--25.mp4",title:"Live Demo 02"},
+      {type:"video",src:"videos/Setup-2/VID-20230214-WA0005.mp4",title:"Live Demo 04"},
+      {type:"video",src:"videos/Setup-2/VID-20230503-WA0005.mp4",title:"Live Demo 05"},
+      {type:"video",src:"videos/Setup-2/VID-20230512-WA0006.mp4",title:"Live Demo 06"},
+      {type:"video",src:"videos/Setup-2/VID-20231124-WA0000.mp4",title:"Live Demo 07"},
+      {type:"video",src:"videos/Setup-2/VID-20231124-WA0002.mp4",title:"Live Demo 08"}
+    ]
+  },
+  {
+    id:3, name:"Advanced DJ Setup", category:"ADVANCED COLLECTION", towerType:"single", maxPerDay:2,
+    description:"A stronger lighting and sound arrangement featuring additional CRP lights, six speakers and a fog machine.",
+    priceOne:18000, priceTwo:31000,
+    specs:[["CRP Lights","4"],["Speakers","6"],["Base / Subwoofer","1"],["Mirror Ball","1"],["PAR Lights","12"],["Fog Machine","1"],["Tower","Single-sided tower"]],
+    media:[
+      {type:"image",src:"videos/Setup-3/cover.jpg",title:"Setup Cover"},
+      {type:"image",src:"videos/Setup-3/IMG-20231211-WA0009.jpg",title:"Setup View"},
+      {type:"video",src:"videos/Setup-3/18-31.mp4",title:"Live Demo 01"},
+      {type:"video",src:"videos/Setup-3/18--31.mp4",title:"Live Demo 02"}
+    ]
+  },
+  {
+    id:4, name:"Royal Dual Layer Setup", category:"ROYAL COLLECTION", towerType:"single", maxPerDay:2,
+    description:"A dual-layer single-sided tower arrangement with enhanced lighting, fog and bubble effects for a distinctive stage design.",
+    priceOne:21000, priceTwo:31000,
+    specs:[["CRP Lights","4"],["Speakers","4–6"],["Base / Subwoofer","1–2"],["Mirror Ball","1"],["Bubble Maker Machine","1"],["PAR Lights","18–20"],["Fog Machine","1"],["Tower","Single-sided, dual layer"]],
+    media:[
+      {type:"image",src:"videos/Setup-4/cover.jpg",title:"Setup Cover"},
+      {type:"image",src:"videos/Setup-4/image.jpg",title:"Setup View"},
+      {type:"video",src:"videos/Setup-4/21-31.mp4",title:"Live Setup Demo"}
+    ]
+  },
+  {
+    id:5, name:"Grand 4×4 Tower Setup", category:"GRAND COLLECTION", towerType:"4x4", maxPerDay:1,
+    description:"A grand 4×4 tower arrangement with multiple speaker and lighting combinations, two mirror balls and special effects. Available with or without ring.",
+    priceOne:25000, priceTwo:40000,
+    specs:[["CRP Lights","4–6"],["Speakers","4 + 2 liner speakers"],["Base / Subwoofer","2"],["Mirror Balls","2"],["PAR Lights","16–24"],["Fog Machine","1"],["Bubble Maker Machine","1"],["Tower","4×4, with or without ring"]],
+    media:[
+      {type:"image",src:"videos/Setup-5/cover.webp",title:"Setup Cover"},
+      {type:"image",src:"videos/Setup-5/IMG20241121153504.jpg",title:"Setup View 01"},
+      {type:"image",src:"videos/Setup-5/IMG20241206150325.jpg",title:"Setup View 02"},
+      {type:"image",src:"videos/Setup-5/IMG20241206150342.jpg",title:"Setup View 03"},
+      {type:"image",src:"videos/Setup-5/IMG20241206150403.jpg",title:"Setup View 04"},
+      {type:"image",src:"videos/Setup-5/IMG20241206151103.jpg",title:"Setup View 05"},
+      {type:"image",src:"videos/Setup-5/IMG20241206151113.jpg",title:"Setup View 06"},
+      {type:"image",src:"videos/Setup-5/IMG20241206151146.jpg",title:"Setup View 07"},
+      {type:"image",src:"videos/Setup-5/IMG20241206151300.jpg",title:"Setup View 08"},
+      {type:"image",src:"videos/Setup-5/Instagram - 1757588184894(WEBP).webp",title:"Additional View 01"},
+      {type:"image",src:"videos/Setup-5/null_1(WEBP).webp",title:"Additional View 02"},
+      {type:"image",src:"videos/Setup-5/null_2(WEBP).webp",title:"Additional View 03"},
+      {type:"video",src:"videos/Setup-5/25-40.mp4",title:"Live Demo 01"},
+      {type:"video",src:"videos/Setup-5/25---40.mp4",title:"Live Demo 02"}
+    ]
+  },
+  {
+    id:6, name:"Elite 4×4 Tower Setup", category:"ELITE COLLECTION", towerType:"4x4", maxPerDay:1,
+    description:"An elite sound arrangement with additional line speakers, powerful lighting, mirror-ball effects and a complete 4×4 tower.",
+    priceOne:30000, priceTwo:40000,
+    specs:[["CRP Lights","4"],["Speakers","4 + 4–6 liner speakers"],["Base / Subwoofer","2"],["Mirror Balls","1–2"],["PAR Lights","18–24"],["Fog Machine","1"],["Bubble Maker Machine","Included"],["Tower","4×4 tower"]],
+    media:[
+      {type:"image",src:"videos/Setup-6/cover.png",title:"Setup Cover"},
+      {type:"video",src:"videos/Setup-6/30-40.mp4",title:"Live Demo 01"},
+      {type:"video",src:"videos/Setup-6/30--40.mp4",title:"Live Demo 02"}
+    ]
+  },
+  {
+    id:7, name:"Signature Ring Tower Setup", category:"SIGNATURE COLLECTION", towerType:"4x4", maxPerDay:1,
+    description:"A signature 4×4 ring tower arrangement with eight CRP lights, additional line speakers and a spectacular special-effects combination.",
+    priceOne:30000, priceTwo:45000,
+    specs:[["CRP Lights","8"],["Speakers","6–8 + 2 liner speakers"],["Base / Subwoofer","1–2"],["Mirror Balls","1–2"],["PAR Lights","18–24"],["Fog Machine","1"],["Bubble Maker Machine","Included"],["Tower","4×4 tower with ring"]],
+    media:[
+      {type:"image",src:"videos/Setup-7/cover.jpg",title:"Setup Cover"},
+      {type:"image",src:"videos/Setup-7/IMG_20240102_104626.jpg",title:"Setup View 01"},
+      {type:"image",src:"videos/Setup-7/IMG-20231204-WA0001.jpg",title:"Setup View 02"},
+      {type:"image",src:"videos/Setup-7/IMG-20231204-WA0002.jpg",title:"Setup View 03"},
+      {type:"image",src:"videos/Setup-7/IMG-20240225-WA0027.jpg",title:"Setup View 04"},
+      {type:"video",src:"videos/Setup-7/30--45.mp4",title:"Live Demo 01"},
+      {type:"video",src:"videos/Setup-7/VID_20240101_214238.mp4",title:"Live Demo 04"},
+      {type:"video",src:"videos/Setup-7/VID-20230515-WA0004.mp4",title:"Live Demo 06"},
+      {type:"video",src:"videos/Setup-7/VID-20230527-WA0022.mp4",title:"Live Demo 07"},
+      {type:"video",src:"videos/Setup-7/VID-20230527-WA0024.mp4",title:"Live Demo 08"},
+      {type:"video",src:"videos/Setup-7/VID-20230527-WA0026.mp4",title:"Live Demo 09"},
+      {type:"video",src:"videos/Setup-7/VID-20240103-WA0003.mp4",title:"Live Demo 10"},
+      {type:"video",src:"videos/Setup-7/VID-20240225-WA0029.mp4",title:"Live Demo 11"}
+    ]
+  },
+  {
+    id:8, name:"Ultimate 4×4 Tower Setup", category:"ULTIMATE COLLECTION", towerType:"4x4", maxPerDay:1,
+    description:"The ultimate stage arrangement with twelve CRP lights, six speakers, two line speakers and a complete 4×4 tower with special effects.",
+    priceOne:35000, priceTwo:50000,
+    specs:[["CRP Lights","12"],["Speakers","6 + 2 liner speakers"],["Base / Subwoofer","1–2"],["Mirror Balls","1–2"],["PAR Lights","18–24"],["Fog Machine","1"],["Bubble Maker Machine","Included"],["Tower","4×4 tower"]],
+    media:[
+      {type:"image",src:"videos/Setup-8/cover.png",title:"Setup Cover"},
+      {type:"video",src:"videos/Setup-8/35-50.mp4",title:"Live Setup Demo"}
+    ]
+  }
 ];
 
+/* Default Standalone Rentals (also extensible via Admin Panel -> Firestore) */
+const defaultRentals = [
+  { id:"rental-speakers", name:"Extra Top Speakers (Pair)", category:"SOUND", pricePerDay:2500, maxPerDay:6, description:"High-output speakers for wider coverage or stage reinforcement." },
+  { id:"rental-bass", name:"Bass / Subwoofer Unit", category:"SOUND", pricePerDay:3000, maxPerDay:4, description:"Deep low-end bass / subwoofer rental per day." },
+  { id:"rental-crp", name:"CRP Stage Lights (Pair)", category:"LIGHTS", pricePerDay:1800, maxPerDay:8, description:"Moving/beam CRP lighting units for dynamic dance-floor beams." },
+  { id:"rental-par", name:"PAR Lights Set (6 Lights)", category:"LIGHTS", pricePerDay:1500, maxPerDay:8, description:"LED PAR wash lights for stage, mandap, or floor highlights." }
+];
+
+/* App State */
+let bookingConfig = {
+  standardAdvance: 2000,
+  highAdvance: 5000,
+  extraDayAdvance: 0
+};
+let rentalsCatalog = [...defaultRentals];
+let allBookings = [];
+let blockedDates = [];
+let currentUser = null;
 
 /* ==========================================
-   GLOBAL ELEMENTS
+   GLOBAL ELEMENTS & HELPERS
 ========================================== */
 
 const grid = document.getElementById("setupGrid");
+const rentalsGrid = document.getElementById("rentalsGrid");
 const drawer = document.getElementById("drawer");
 const overlay = document.getElementById("overlay");
 const galleryTrack = document.getElementById("galleryTrack");
@@ -1011,562 +1422,1033 @@ const galleryTrack = document.getElementById("galleryTrack");
 let currentSetup = null;
 let currentMediaIndex = 0;
 
-
-/* ==========================================
-   FORMATTING
-========================================== */
-
 function money(value){
-  return "₹" + value.toLocaleString("en-IN");
+  return "₹" + Number(value || 0).toLocaleString("en-IN");
 }
 
+function isAdminUser(user){
+  return Boolean(user && user.email && user.email.toLowerCase() === BUSINESS.adminEmail.toLowerCase());
+}
+
+function getPackagePriceForDays(setup, days){
+  if(!setup) return 0;
+  if(days === 1) return Number(setup.priceOne || 0);
+  if(days === 2) return Number(setup.priceTwo || 0);
+  const perDayIncrement = Math.max(5000, Number(setup.priceTwo || 0) - Number(setup.priceOne || 0));
+  return Number(setup.priceTwo || 0) + ((days - 2) * perDayIncrement);
+}
+
+function calculateAdvanceAmount(totalAmount, days){
+  const baseTier = Number(totalAmount) > 25000
+    ? Number(bookingConfig.highAdvance ?? 5000)
+    : Number(bookingConfig.standardAdvance ?? 2000);
+  const extraDays = Math.max(0, Number(days) - 2);
+  return baseTier + (extraDays * Number(bookingConfig.extraDayAdvance ?? 0));
+}
+
+function expandDateRange(startDateStr, days){
+  if(!startDateStr || days < 1) return [];
+  const [y, m, d] = startDateStr.split("-").map(Number);
+  const dates = [];
+  for(let i = 0; i < days; i++){
+    const dt = new Date(Date.UTC(y, m - 1, d + i));
+    dates.push(dt.toISOString().slice(0, 10));
+  }
+  return dates;
+}
 
 /* ==========================================
-   CREATE HOMEPAGE CARDS
+   RENDER CARDS & RENTALS
 ========================================== */
 
 function renderCards(){
-
   grid.innerHTML = "";
-
-  setups.forEach(setup=>{
-
-    const cover = setup.media.find(m=>m.title==="Setup Cover");
-
-    const photos = setup.media.filter(m=>m.type==="image").length;
-    const videos = setup.media.filter(m=>m.type==="video").length;
+  setups.forEach(setup => {
+    const cover = setup.media.find(m => m.title === "Setup Cover") || setup.media[0];
+    const photos = setup.media.filter(m => m.type === "image").length;
+    const videos = setup.media.filter(m => m.type === "video").length;
+    const capLabel = setup.towerType === "4x4" ? "Max 1/day (4×4)" : "Max 2/day (Single)";
 
     const card = document.createElement("article");
     card.className = "setup-card";
-
     card.innerHTML = `
       <div class="card-image">
         <img src="${cover.src}" alt="${setup.name}" loading="lazy">
         <span class="setup-number">SETUP ${String(setup.id).padStart(2,"0")}</span>
-        <span class="card-media-count">${photos} PHOTOS · ${videos} VIDEOS</span>
+        <span class="card-media-count">${photos} PHOTOS · ${videos} VIDEOS · ${capLabel}</span>
       </div>
-
       <div class="card-content">
         <div class="card-category">${setup.category}</div>
         <h3>${setup.name}</h3>
         <p>${setup.description}</p>
-
         <div class="card-price">
           <div class="price-preview">
             <strong>${money(setup.priceOne)}</strong>
-            <small>Starting · 1 day</small>
+            <small>1 Day · ${money(setup.priceTwo)} / 2 Days</small>
           </div>
-          <button class="card-open">EXPLORE ↗</button>
+          <button type="button" class="card-open">EXPLORE ↗</button>
         </div>
       </div>
     `;
-
-    card.addEventListener("click",()=>openSetup(setup.id));
-
+    card.addEventListener("click", () => openSetup(setup.id));
     grid.appendChild(card);
-
   });
-
 }
 
+function renderRentalsSection(){
+  rentalsGrid.innerHTML = "";
+  const checkboxWrap = document.getElementById("rentalCheckboxes");
+  checkboxWrap.innerHTML = "";
+
+  rentalsCatalog.forEach(item => {
+    const card = document.createElement("article");
+    card.className = "rental-card";
+    card.innerHTML = `
+      <div>
+        <span class="card-category">${item.category} RENTAL</span>
+        <h3>${item.name}</h3>
+        <p>${item.description || "Individual equipment rental."}</p>
+      </div>
+      <div>
+        <div class="rental-meta">
+          <span class="rental-price">${money(item.pricePerDay)} / day</span>
+          <span class="rental-stock">Max ${item.maxPerDay || 5}/day</span>
+        </div>
+        <button type="button" class="btn btn-yellow btn-sm" style="width:100%;margin-top:12px" data-book-rental="${item.id}">
+          BOOK THIS ITEM ↗
+        </button>
+      </div>
+    `;
+    card.querySelector("[data-book-rental]").addEventListener("click", () => {
+      openBookingModal({ preselectRentalId: item.id });
+    });
+    rentalsGrid.appendChild(card);
+
+    const label = document.createElement("label");
+    label.className = "checkbox-row";
+    label.style.background = "#140013";
+    label.style.padding = "9px 10px";
+    label.style.borderRadius = "8px";
+    label.style.border = "1px solid rgba(255,255,255,.12)";
+    label.innerHTML = `
+      <input type="checkbox" class="rental-chk" value="${item.id}" data-price="${item.pricePerDay}">
+      <span>${item.name} (${money(item.pricePerDay)}/day)</span>
+    `;
+    label.querySelector("input").addEventListener("change", updateBookingSummary);
+    checkboxWrap.appendChild(label);
+  });
+}
 
 /* ==========================================
-   OPEN SLIDING DRAWER
+   SLIDING DRAWER & GALLERY
 ========================================== */
 
-function openSetup(id, options={}){
-
-  currentSetup = setups.find(s=>s.id===id);
-
-  if(!currentSetup)return;
-
+function openSetup(id, options = {}){
+  currentSetup = setups.find(s => s.id === id);
+  if(!currentSetup) return;
   currentMediaIndex = 0;
 
   document.getElementById("drawerNumber").textContent =
-    "SETUP "+String(currentSetup.id).padStart(2,"0")
-    +" · "+currentSetup.category;
-
-  document.getElementById("drawerTitle").textContent =
-    currentSetup.name;
-
-  document.getElementById("drawerDescription").textContent =
-    currentSetup.description;
-
-  document.getElementById("priceOne").textContent =
-    money(currentSetup.priceOne);
-
-  document.getElementById("priceTwo").textContent =
-    money(currentSetup.priceTwo);
+    "SETUP " + String(currentSetup.id).padStart(2,"0") + " · " + currentSetup.category;
+  document.getElementById("drawerTitle").textContent = currentSetup.name;
+  document.getElementById("drawerDescription").textContent = currentSetup.description;
+  document.getElementById("priceOne").textContent = money(currentSetup.priceOne);
+  document.getElementById("priceTwo").textContent = money(currentSetup.priceTwo);
 
   renderSpecifications();
   renderGallery();
 
-  document.getElementById("previousSetup").disabled =
-    currentSetup.id===1;
-
-  document.getElementById("nextSetup").disabled =
-    currentSetup.id===8;
+  document.getElementById("previousSetup").disabled = currentSetup.id === 1;
+  document.getElementById("nextSetup").disabled = currentSetup.id === setups.length;
 
   drawer.classList.add("active");
+  drawer.setAttribute("aria-hidden", "false");
   overlay.classList.add("active");
-  document.body.style.overflow="hidden";
+  document.body.style.overflow = "hidden";
 
   if(!options.fromPopState){
-    const state={happyFloorLayer:"drawer",setupId:currentSetup.id};
-    if(options.replaceHistory) history.replaceState(state,"","#setup-"+currentSetup.id);
-    else history.pushState(state,"","#setup-"+currentSetup.id);
+    const state = { happyFloorLayer: "drawer", setupId: currentSetup.id };
+    if(options.replaceHistory) history.replaceState(state, "", "#setup-" + currentSetup.id);
+    else history.pushState(state, "", "#setup-" + currentSetup.id);
   }
-
 }
-
-
-/* ==========================================
-   EQUIPMENT SPECIFICATIONS
-========================================== */
 
 function renderSpecifications(){
-
-  const list=document.getElementById("specList");
-
-  list.innerHTML="";
-
-  currentSetup.specs.forEach(item=>{
-
-    const li=document.createElement("li");
-
-    const name=document.createElement("span");
-    name.textContent=item[0];
-
-    const value=document.createElement("strong");
-    value.textContent=item[1];
-
-    li.append(name,value);
+  const list = document.getElementById("specList");
+  list.innerHTML = "";
+  currentSetup.specs.forEach(item => {
+    const li = document.createElement("li");
+    const name = document.createElement("span");
+    name.textContent = item[0];
+    const value = document.createElement("strong");
+    value.textContent = item[1];
+    li.append(name, value);
     list.appendChild(li);
-
   });
-
 }
-
-
-/* ==========================================
-   BUILD MEDIA SLIDER
-========================================== */
 
 function renderGallery(){
+  galleryTrack.innerHTML = "";
+  const dots = document.getElementById("galleryDots");
+  dots.innerHTML = "";
 
-  galleryTrack.innerHTML="";
-
-  const dots=document.getElementById("galleryDots");
-  dots.innerHTML="";
-
-  currentSetup.media.forEach((media,index)=>{
-
-    const slide=document.createElement("div");
-    slide.className="gallery-slide";
+  currentSetup.media.forEach((media, index) => {
+    const slide = document.createElement("div");
+    slide.className = "gallery-slide";
 
     let element;
-
-    if(media.type==="image"){
-
-      element=document.createElement("img");
-      element.src=media.src;
-      element.alt=media.title;
-      element.loading="lazy";
-
-      element.addEventListener("click",()=>{
-        openLightbox(media.src);
-      });
-
+    if(media.type === "image"){
+      element = document.createElement("img");
+      element.src = media.src;
+      element.alt = media.title;
+      element.loading = "lazy";
+      element.addEventListener("click", () => openLightbox(media.src));
     }else{
-
-      element=document.createElement("video");
-      element.src=media.src;
-      element.controls=true;
-      element.preload="metadata";
-      element.playsInline=true;
-
+      element = document.createElement("video");
+      element.src = media.src;
+      element.controls = true;
+      element.preload = "metadata";
+      element.playsInline = true;
     }
 
-    const caption=document.createElement("div");
-    caption.className="slide-caption";
+    const caption = document.createElement("div");
+    caption.className = "slide-caption";
+    const type = document.createElement("span");
+    type.textContent = media.type.toUpperCase() + " · ";
+    caption.append(type, document.createTextNode(media.title));
 
-    const type=document.createElement("span");
-    type.textContent=media.type.toUpperCase()+" · ";
-
-    caption.append(type,document.createTextNode(media.title));
-
-    slide.append(element,caption);
+    slide.append(element, caption);
     galleryTrack.appendChild(slide);
 
-    const dot=document.createElement("div");
-    dot.className="gallery-dot"+(index===0?" active":"");
-
-    dot.addEventListener("click",()=>goToMedia(index));
-
-    dots.appendChild(dot);
-
+    const isVideo = media.type === "video";
+    const indicator = document.createElement("button");
+    indicator.type = "button";
+    indicator.className = isVideo
+      ? "gallery-video-pill" + (index === 0 ? " active" : "")
+      : "gallery-dot" + (index === 0 ? " active" : "");
+    indicator.setAttribute("aria-label", `Go to ${isVideo ? "video" : "photo"} ${index + 1}: ${media.title}`);
+    if(isVideo){
+      indicator.textContent = "▶";
+      indicator.title = `Video: ${media.title}`;
+    }else{
+      indicator.title = `Photo: ${media.title}`;
+    }
+    indicator.addEventListener("click", () => goToMedia(index));
+    dots.appendChild(indicator);
   });
 
   updateGalleryControls();
-
 }
 
-
-/* ==========================================
-   MEDIA SLIDING
-========================================== */
-
 function goToMedia(index){
-
-  if(!currentSetup)return;
-
-  const max=currentSetup.media.length-1;
-
-  currentMediaIndex=Math.max(0,Math.min(index,max));
-
-  // Pause videos from previous slide
-  galleryTrack.querySelectorAll("video").forEach(video=>{
-    video.pause();
-  });
-
-  const slide=galleryTrack.children[currentMediaIndex];
-
-  slide.scrollIntoView({
-    behavior:"smooth",
-    block:"nearest",
-    inline:"start"
-  });
-
+  if(!currentSetup) return;
+  const max = currentSetup.media.length - 1;
+  currentMediaIndex = Math.max(0, Math.min(index, max));
+  galleryTrack.querySelectorAll("video").forEach(v => v.pause());
+  galleryTrack.children[currentMediaIndex].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
   updateGalleryControls();
-
 }
 
 function updateGalleryControls(){
+  if(!currentSetup) return;
+  const total = currentSetup.media.length;
+  const prevBtn = document.getElementById("galleryPrev");
+  const nextBtn = document.getElementById("galleryNext");
+  prevBtn.classList.toggle("is-hidden", total <= 1 || currentMediaIndex === 0);
+  nextBtn.classList.toggle("is-hidden", total <= 1 || currentMediaIndex >= total - 1);
 
-  if(!currentSetup)return;
+  const activeItem = currentSetup.media[currentMediaIndex];
+  const typeTag = activeItem && activeItem.type === "video" ? " · VIDEO" : " · PHOTO";
+  document.getElementById("galleryCount").textContent = "MEDIA " + (currentMediaIndex + 1) + " / " + total + typeTag;
 
-  const total=currentSetup.media.length;
-
-  document.getElementById("galleryPrev").disabled =
-    currentMediaIndex===0;
-
-  document.getElementById("galleryNext").disabled =
-    currentMediaIndex===total-1;
-
-  document.getElementById("galleryCount").textContent =
-    "MEDIA "+(currentMediaIndex+1)+" / "+total;
-
-  [...document.getElementById("galleryDots").children]
-    .forEach((dot,index)=>{
-      dot.classList.toggle("active",index===currentMediaIndex);
-    });
-
+  [...document.getElementById("galleryDots").children].forEach((indicator, idx) => {
+    indicator.classList.toggle("active", idx === currentMediaIndex);
+  });
 }
 
-document.getElementById("galleryPrev").onclick=()=>{
-  goToMedia(currentMediaIndex-1);
-};
-
-document.getElementById("galleryNext").onclick=()=>{
-  goToMedia(currentMediaIndex+1);
-};
-
-
-/* Update index when user swipes the gallery */
+document.getElementById("galleryPrev").onclick = () => goToMedia(currentMediaIndex - 1);
+document.getElementById("galleryNext").onclick = () => goToMedia(currentMediaIndex + 1);
 
 let scrollTimer;
-
-galleryTrack.addEventListener("scroll",()=>{
-
+galleryTrack.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
-
-  scrollTimer=setTimeout(()=>{
-
+  scrollTimer = setTimeout(() => {
     if(!currentSetup) return;
-    const slides=[...galleryTrack.children];
-    let nearest=0, distance=Infinity;
-    slides.forEach((slide,index)=>{
-      const d=Math.abs(slide.offsetLeft-galleryTrack.scrollLeft);
-      if(d<distance){distance=d;nearest=index;}
+    const slides = [...galleryTrack.children];
+    let nearest = 0, distance = Infinity;
+    slides.forEach((slide, idx) => {
+      const d = Math.abs(slide.offsetLeft - galleryTrack.scrollLeft);
+      if(d < distance){ distance = d; nearest = idx; }
     });
-    currentMediaIndex=nearest;
-    slides.forEach((slide,index)=>{
-      if(index!==nearest) slide.querySelectorAll("video").forEach(video=>video.pause());
+    currentMediaIndex = nearest;
+    slides.forEach((slide, idx) => {
+      if(idx !== nearest) slide.querySelectorAll("video").forEach(v => v.pause());
     });
     updateGalleryControls();
-
-  },90);
-
+  }, 90);
 });
 
-
-/* ==========================================
-   PREVIOUS / NEXT SETUP
-========================================== */
-
-document.getElementById("previousSetup").onclick=()=>{
-
-  if(currentSetup && currentSetup.id>1){
-    openSetup(currentSetup.id-1,{replaceHistory:true});
-  }
-
+document.getElementById("previousSetup").onclick = () => {
+  if(currentSetup && currentSetup.id > 1) openSetup(currentSetup.id - 1, { replaceHistory: true });
 };
-
-document.getElementById("nextSetup").onclick=()=>{
-
-  if(currentSetup && currentSetup.id<8){
-    openSetup(currentSetup.id+1,{replaceHistory:true});
-  }
-
+document.getElementById("nextSetup").onclick = () => {
+  if(currentSetup && currentSetup.id < setups.length) openSetup(currentSetup.id + 1, { replaceHistory: true });
 };
-
-
-/* ==========================================
-   CLOSE DRAWER
-========================================== */
 
 function hideDrawer(){
-  galleryTrack.querySelectorAll("video").forEach(video=>video.pause());
+  galleryTrack.querySelectorAll("video").forEach(v => v.pause());
   drawer.classList.remove("active");
+  drawer.setAttribute("aria-hidden", "true");
   overlay.classList.remove("active");
-  document.body.style.overflow="";
-  currentSetup=null;
+  document.body.style.overflow = "";
+  currentSetup = null;
 }
 
 function closeDrawer(){
   if(!drawer.classList.contains("active")) return;
-  // A pushed history entry means Back closes the drawer instead of leaving the page.
-  if(history.state && history.state.happyFloorLayer==="drawer") history.back();
+  if(history.state && history.state.happyFloorLayer === "drawer") history.back();
   else hideDrawer();
 }
 
-document.getElementById("closeDrawer").onclick=closeDrawer;
-overlay.onclick=closeDrawer;
-
-
-/* ==========================================
-   WHATSAPP INQUIRY
-========================================== */
+document.getElementById("closeDrawer").onclick = closeDrawer;
+overlay.onclick = closeDrawer;
 
 function getSetupMessage(setup){
-
-  const specs=setup.specs
-    .map(item=>`• ${item[0]}: ${item[1]}`)
-    .join("\n");
-
-  const demo=setup.media.find(m=>m.type==="video");
-
-  const demoLink=demo
-    ?new URL(demo.src,window.location.href).href
-    :"Available on website";
-
-  const galleryLink=window.location.origin+
-    window.location.pathname+"#setup-"+setup.id;
-
-  return `Hello ${BUSINESS.name}!
-
-I am interested in booking this DJ setup.
-
-SETUP DETAILS
-Setup: ${setup.name}
-Category: ${setup.category}
-
-EQUIPMENT
-${specs}
-
-BOOKING PRICES
-1 Day: ${money(setup.priceOne)}
-2 Days: ${money(setup.priceTwo)}
-
-Demo video:
-${demoLink}
-
-Gallery:
-${galleryLink}
-
-Please share availability and booking details.
-
-Thank you!`;
-
+  const specs = setup.specs.map(item => `• ${item[0]}: ${item[1]}`).join("\n");
+  const demo = setup.media.find(m => m.type === "video");
+  const demoLink = demo ? new URL(demo.src, window.location.href).href : "Available on website";
+  const galleryLink = window.location.origin + window.location.pathname + "#setup-" + setup.id;
+  return `Hello ${BUSINESS.name}!\n\nI am interested in booking this DJ setup.\n\nSETUP DETAILS\nSetup: ${setup.name}\nCategory: ${setup.category}\n\nEQUIPMENT\n${specs}\n\nBOOKING PRICES\n1 Day: ${money(setup.priceOne)}\n2 Days: ${money(setup.priceTwo)}\n\nDemo video:\n${demoLink}\n\nGallery:\n${galleryLink}`;
 }
 
-document.getElementById("whatsappBtn").onclick=()=>{
-
-  if(!currentSetup)return;
-
-  const message=getSetupMessage(currentSetup);
-
-  const url="https://wa.me/"+BUSINESS.phone+
-    "?text="+encodeURIComponent(message);
-
-  window.open(url,"_blank");
-
+document.getElementById("whatsappBtn").onclick = () => {
+  if(!currentSetup) return;
+  window.open("https://wa.me/" + BUSINESS.phone + "?text=" + encodeURIComponent(getSetupMessage(currentSetup)), "_blank", "noopener");
 };
 
+document.getElementById("shareBtn").onclick = async () => {
+  if(!currentSetup) return;
+  const setup = currentSetup;
+  const message = getSetupMessage(setup);
+  const shareURL = window.location.origin + window.location.pathname + "#setup-" + setup.id;
+  try{
+    if(navigator.share && navigator.canShare && navigator.canShare({ title: setup.name, text: message, url: shareURL })){
+      await navigator.share({ title: setup.name + " | " + BUSINESS.name, text: message, url: shareURL });
+    }else{
+      await navigator.clipboard.writeText(message);
+      alert("Setup details copied successfully!");
+    }
+  }catch(err){
+    if(err.name !== "AbortError") prompt("Copy setup details:", message);
+  }
+};
+
+document.getElementById("drawerBookBtn").onclick = () => {
+  const id = currentSetup ? currentSetup.id : 1;
+  openBookingModal({ preselectSetupId: id });
+};
 
 /* ==========================================
-   SHARE SETUP
+   BOOKING FLOW & CAPACITY VALIDATION
 ========================================== */
 
-async function shareCurrentSetup(){
+const bookingModal = document.getElementById("bookingModal");
+const bookSetupSelect = document.getElementById("bookSetupSelect");
+const bookDaysSelect = document.getElementById("bookDays");
+const customDaysWrap = document.getElementById("customDaysWrap");
+const customDaysInput = document.getElementById("customDaysInput");
+const bookStartDateInput = document.getElementById("bookStartDate");
 
-  if(!currentSetup)return;
+function populateSetupDropdown(selectedId = ""){
+  bookSetupSelect.innerHTML = `<option value="">-- Rentals Only (No Full DJ Setup) --</option>`;
+  setups.forEach(s => {
+    const cap = s.towerType === "4x4" ? "4×4 · Max 1/day" : "Single Tower · Max 2/day";
+    const opt = document.createElement("option");
+    opt.value = String(s.id);
+    opt.textContent = `Setup ${String(s.id).padStart(2,"0")}: ${s.name} (${money(s.priceOne)}/1d · ${money(s.priceTwo)}/2d · ${cap})`;
+    if(String(s.id) === String(selectedId)) opt.selected = true;
+    bookSetupSelect.appendChild(opt);
+  });
+}
 
-  const setup=currentSetup;
+function getSelectedDaysCount(){
+  if(bookDaysSelect.value === "custom"){
+    const n = parseInt(customDaysInput.value, 10);
+    return Number.isFinite(n) && n >= 3 ? Math.min(15, n) : 3;
+  }
+  return parseInt(bookDaysSelect.value, 10) || 1;
+}
 
-  const message=getSetupMessage(setup);
+function getSelectedRentals(){
+  return [...document.querySelectorAll(".rental-chk:checked")].map(chk => {
+    const found = rentalsCatalog.find(r => r.id === chk.value);
+    return found || { id: chk.value, name: chk.value, pricePerDay: Number(chk.dataset.price || 0), maxPerDay: 5 };
+  });
+}
 
-  const shareURL=window.location.origin+
-    window.location.pathname+"#setup-"+setup.id;
+function checkDateRangeAvailability(setupObj, selectedRentals, startDateStr, days){
+  const banner = document.getElementById("availabilityBanner");
+  const submitBtn = document.getElementById("submitBookingBtn");
+  const dates = expandDateRange(startDateStr, days);
 
-  const data={
-    title:setup.name+" | "+BUSINESS.name,
-    text:message,
-    url:shareURL
-  };
+  if(!setupObj && selectedRentals.length === 0){
+    banner.className = "status-banner status-warn";
+    banner.textContent = "Please select a DJ setup or at least one individual rental item.";
+    submitBtn.disabled = true;
+    return { ok: false, dates };
+  }
 
-  try{
+  if(!startDateStr){
+    banner.className = "status-banner status-warn";
+    banner.textContent = "Choose a start date to verify availability against 4×4 (max 1/day) and single-sided tower (max 2/day) rules.";
+    submitBtn.disabled = true;
+    return { ok: false, dates };
+  }
 
-    if(navigator.share && navigator.canShare &&
-       navigator.canShare({title:data.title,text:data.text,url:data.url})){
+  const activeBookings = allBookings.filter(b => b.status !== "cancelled");
 
-      await navigator.share(data);
-
-    }else{
-
-      await navigator.clipboard.writeText(message);
-
-      alert("Setup details copied successfully!");
-
+  for(const d of dates){
+    // Check blocked dates
+    const isBlocked = blockedDates.some(blk => {
+      if(blk.date !== d) return false;
+      if(blk.scope === "all") return true;
+      if(setupObj && blk.scope === setupObj.towerType) return true;
+      return false;
+    });
+    if(isBlocked){
+      banner.className = "status-banner status-err";
+      banner.textContent = `Date ${d} is blocked by management.`;
+      submitBtn.disabled = true;
+      return { ok: false, dates };
     }
 
-  }catch(error){
-
-    if(error.name!=="AbortError"){
-      try{
-        await navigator.clipboard.writeText(message);
-        alert("Setup details copied!");
-      }catch(e){
-        prompt("Copy setup details:",message);
+    if(setupObj){
+      if(setupObj.towerType === "4x4"){
+        const count4x4 = activeBookings.filter(b =>
+          b.towerType === "4x4" && Array.isArray(b.dates) && b.dates.includes(d)
+        ).length;
+        if(count4x4 >= 1){
+          banner.className = "status-banner status-err";
+          banner.textContent = `4×4 Tower limit reached on ${d} (only 1 4×4 tower booking allowed per day).`;
+          submitBtn.disabled = true;
+          return { ok: false, dates };
+        }
+      }else{
+        const countSingle = activeBookings.filter(b =>
+          b.towerType === "single" && Array.isArray(b.dates) && b.dates.includes(d)
+        ).length;
+        if(countSingle >= 2){
+          banner.className = "status-banner status-err";
+          banner.textContent = `Single-sided tower limit reached on ${d} (maximum 2 single-sided tower bookings allowed per day).`;
+          submitBtn.disabled = true;
+          return { ok: false, dates };
+        }
       }
     }
 
+    for(const r of selectedRentals){
+      const rCount = activeBookings.filter(b =>
+        Array.isArray(b.dates) && b.dates.includes(d) &&
+        Array.isArray(b.rentalIds) && b.rentalIds.includes(r.id)
+      ).length;
+      if(rCount >= (r.maxPerDay || 5)){
+        banner.className = "status-banner status-err";
+        banner.textContent = `"${r.name}" has reached daily availability limit on ${d}.`;
+        submitBtn.disabled = true;
+        return { ok: false, dates };
+      }
+    }
   }
 
+  banner.className = "status-banner status-ok";
+  banner.textContent = `Available for ${days} day(s) (${dates[0]} to ${dates[dates.length - 1]}).`;
+  submitBtn.disabled = false;
+  return { ok: true, dates };
 }
 
-document.getElementById("shareBtn").onclick=shareCurrentSetup;
+function updateBookingSummary(){
+  customDaysWrap.style.display = bookDaysSelect.value === "custom" ? "flex" : "none";
+  const days = getSelectedDaysCount();
+  const setupId = bookSetupSelect.value;
+  const setupObj = setups.find(s => String(s.id) === String(setupId)) || null;
+  const selectedRentals = getSelectedRentals();
 
+  const setupTotal = setupObj ? getPackagePriceForDays(setupObj, days) : 0;
+  const rentalsTotal = selectedRentals.reduce((sum, r) => sum + (Number(r.pricePerDay || 0) * days), 0);
+  const grandTotal = setupTotal + rentalsTotal;
+  const advance = grandTotal > 0 ? calculateAdvanceAmount(grandTotal, days) : 0;
+  const balance = Math.max(0, grandTotal - advance);
+
+  document.getElementById("sumTotal").textContent = money(grandTotal);
+  document.getElementById("sumDays").textContent = days === 1 ? "1 Day" : `${days} Days`;
+  document.getElementById("sumAdvance").textContent = money(advance);
+  document.getElementById("sumBalance").textContent = money(balance);
+
+  checkDateRangeAvailability(setupObj, selectedRentals, bookStartDateInput.value, days);
+  return { setupObj, selectedRentals, days, grandTotal, advance, balance };
+}
+
+function openBookingModal({ preselectSetupId = "", preselectRentalId = "" } = {}){
+  populateSetupDropdown(preselectSetupId);
+  document.querySelectorAll(".rental-chk").forEach(chk => {
+    chk.checked = preselectRentalId ? chk.value === preselectRentalId : false;
+  });
+  if(currentUser && !document.getElementById("custName").value){
+    document.getElementById("custName").value = currentUser.displayName || "";
+  }
+  updateBookingSummary();
+  bookingModal.classList.add("active");
+}
+
+document.getElementById("closeBookingModal").onclick = () => bookingModal.classList.remove("active");
+document.getElementById("quickBookBtn").onclick = () => openBookingModal({ preselectSetupId: currentSetup ? currentSetup.id : 1 });
+document.getElementById("heroBookBtn").onclick = () => openBookingModal({ preselectSetupId: 1 });
+
+[bookSetupSelect, bookDaysSelect, customDaysInput, bookStartDateInput].forEach(el => {
+  el.addEventListener("input", updateBookingSummary);
+  el.addEventListener("change", updateBookingSummary);
+});
+
+document.getElementById("bookViaWhatsappBtn").onclick = () => {
+  const info = updateBookingSummary();
+  const name = document.getElementById("custName").value.trim() || "Customer";
+  const phone = document.getElementById("custPhone").value.trim() || "N/A";
+  const venue = document.getElementById("custVenue").value.trim() || "N/A";
+  const dateStr = bookStartDateInput.value || "TBD";
+  const rentalNames = info.selectedRentals.map(r => r.name).join(", ") || "None";
+  const msg = `Hello ${BUSINESS.name}!\n\nBooking Inquiry:\n• Name: ${name}\n• Phone: ${phone}\n• Venue: ${venue}\n• Start Date: ${dateStr} (${info.days} day(s))\n• Setup: ${info.setupObj ? info.setupObj.name : "Rentals Only"}\n• Rentals: ${rentalNames}\n• Total: ${money(info.grandTotal)}\n• Advance: ${money(info.advance)}`;
+  window.open("https://wa.me/" + BUSINESS.phone + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+};
+
+document.getElementById("bookingForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if(!currentUser){
+    alert("Please sign in first (via My Bookings) so your booking can be tracked securely.");
+    accountModal.classList.add("active");
+    return;
+  }
+  if(!document.getElementById("policyAgree").checked){
+    alert("Please accept the advance, rescheduling, and equipment liability terms.");
+    return;
+  }
+
+  const info = updateBookingSummary();
+  const avail = checkDateRangeAvailability(info.setupObj, info.selectedRentals, bookStartDateInput.value, info.days);
+  if(!avail.ok) return;
+
+  const payload = {
+    userId: currentUser.uid,
+    userEmail: currentUser.email,
+    customerName: document.getElementById("custName").value.trim(),
+    customerPhone: document.getElementById("custPhone").value.trim(),
+    venue: document.getElementById("custVenue").value.trim(),
+    notes: document.getElementById("custNotes").value.trim(),
+    setupId: info.setupObj ? info.setupObj.id : null,
+    setupName: info.setupObj ? info.setupObj.name : "Individual Rentals Only",
+    towerType: info.setupObj ? info.setupObj.towerType : "rental_only",
+    rentalIds: info.selectedRentals.map(r => r.id),
+    rentalNames: info.selectedRentals.map(r => r.name),
+    startDate: bookStartDateInput.value,
+    days: info.days,
+    dates: avail.dates,
+    totalAmount: info.grandTotal,
+    advanceAmount: info.advance,
+    balanceAmount: info.balance,
+    status: "pending_payment",
+    gatewayStatus: "pre_kyc_pending",
+    rescheduleRequest: null,
+    createdAt: serverTimestamp()
+  };
+
+  try{
+    await addDoc(collection(db, "bookings"), payload);
+    alert(`Booking recorded! Total: ${money(info.grandTotal)} | Advance required: ${money(info.advance)}. You can view it under My Bookings.`);
+    bookingModal.classList.remove("active");
+    document.getElementById("bookingForm").reset();
+    updateBookingSummary();
+  }catch(err){
+    alert("Could not save booking: " + err.message);
+  }
+});
 
 /* ==========================================
-   FULL IMAGE VIEWER
+   CUSTOMER ACCOUNT & RESCHEDULE REQUESTS
+========================================== */
+
+const accountModal = document.getElementById("accountModal");
+document.getElementById("accountBtn").onclick = () => accountModal.classList.add("active");
+document.getElementById("closeAccountModal").onclick = () => accountModal.classList.remove("active");
+
+document.getElementById("userLoginBtn").onclick = async () => {
+  try{
+    await signInWithEmailAndPassword(auth, document.getElementById("userEmail").value, document.getElementById("userPass").value);
+  }catch(e){ alert(e.message); }
+};
+
+document.getElementById("userRegisterBtn").onclick = async () => {
+  try{
+    await createUserWithEmailAndPassword(auth, document.getElementById("userEmail").value, document.getElementById("userPass").value);
+  }catch(e){ alert(e.message); }
+};
+
+document.getElementById("userGoogleBtn").onclick = async () => {
+  try{ await signInWithPopup(auth, googleProvider); }
+  catch(e){ alert(e.message); }
+};
+
+document.getElementById("userLogoutBtn").onclick = () => signOut(auth);
+
+function renderUserBookings(){
+  const tbody = document.getElementById("userBookingsBody");
+  if(!currentUser){
+    tbody.innerHTML = `<tr><td colspan="5">Sign in above to view your bookings.</td></tr>`;
+    return;
+  }
+  const mine = allBookings.filter(b => b.userId === currentUser.uid);
+  if(!mine.length){
+    tbody.innerHTML = `<tr><td colspan="5">No bookings found for ${currentUser.email} yet.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = "";
+  mine.forEach(b => {
+    const tr = document.createElement("tr");
+    const badgeClass = b.status === "confirmed" ? "badge-confirmed" : (b.status === "cancelled" ? "badge-cancelled" : "badge-pending");
+    const reqText = b.rescheduleRequest
+      ? `${b.rescheduleRequest.requestedDate} (${b.rescheduleRequest.status})`
+      : "None";
+    tr.innerHTML = `
+      <td><strong>${b.setupName}</strong><br><small>${(b.rentalNames || []).join(", ") || "No extra rentals"}</small></td>
+      <td>${b.startDate} (${b.days}d)</td>
+      <td>Total: ${money(b.totalAmount)}<br>Adv: ${money(b.advanceAmount)}</td>
+      <td><span class="badge ${badgeClass}">${b.status}</span></td>
+      <td>
+        <div>${reqText}</div>
+        ${b.status !== "cancelled" ? `<button type="button" class="btn btn-outline btn-sm" style="margin-top:6px" data-resched="${b.id}">REQUEST RESCHEDULE</button>` : ""}
+      </td>
+    `;
+    const btn = tr.querySelector("[data-resched]");
+    if(btn){
+      btn.onclick = async () => {
+        const newDate = prompt("Enter new requested start date (YYYY-MM-DD) — subject to owner approval:");
+        if(!newDate) return;
+        const reason = prompt("Reason for date change:") || "Customer reschedule request";
+        try{
+          await updateDoc(doc(db, "bookings", b.id), {
+            rescheduleRequest: { requestedDate: newDate, reason, status: "pending" }
+          });
+          alert("Reschedule request sent to owner for approval.");
+        }catch(err){ alert("Error: " + err.message); }
+      };
+    }
+    tbody.appendChild(tr);
+  });
+}
+
+/* ==========================================
+   ADMIN PANEL (ashokganga1122@gmail.com)
+========================================== */
+
+const adminModal = document.getElementById("adminModal");
+document.getElementById("adminOpenBtn").onclick = () => adminModal.classList.add("active");
+document.getElementById("closeAdminModal").onclick = () => adminModal.classList.remove("active");
+
+document.getElementById("adminEmailLoginBtn").onclick = async () => {
+  const email = document.getElementById("adminEmailInput").value.trim();
+  const pass = document.getElementById("adminPassInput").value;
+  if(email.toLowerCase() !== BUSINESS.adminEmail.toLowerCase()){
+    alert("Access restricted to " + BUSINESS.adminEmail);
+    return;
+  }
+  try{ await signInWithEmailAndPassword(auth, email, pass); }
+  catch(e){ alert(e.message); }
+};
+
+document.getElementById("adminGoogleLoginBtn").onclick = async () => {
+  try{ await signInWithPopup(auth, googleProvider); }
+  catch(e){ alert(e.message); }
+};
+
+document.getElementById("adminLogoutBtn").onclick = () => signOut(auth);
+
+document.querySelectorAll(".tab-btn").forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    document.querySelectorAll(".admin-tab").forEach(t => t.style.display = "none");
+    document.getElementById(btn.dataset.adminTab).style.display = "block";
+  };
+});
+
+function renderAdminConsole(){
+  const consoleEl = document.getElementById("adminConsole");
+  const statusEl = document.getElementById("adminAuthStatus");
+  const logoutBtn = document.getElementById("adminLogoutBtn");
+
+  if(!isAdminUser(currentUser)){
+    consoleEl.style.display = "none";
+    logoutBtn.style.display = "none";
+    statusEl.className = "status-banner status-warn";
+    statusEl.textContent = currentUser
+      ? `Signed in as ${currentUser.email}. Only ${BUSINESS.adminEmail} can access admin controls.`
+      : `Sign in with ${BUSINESS.adminEmail} to manage bookings, advance rates, rentals, and blocked dates.`;
+    return;
+  }
+
+  consoleEl.style.display = "block";
+  logoutBtn.style.display = "inline-flex";
+  statusEl.className = "status-banner status-ok";
+  statusEl.textContent = `Admin authenticated: ${currentUser.email}`;
+
+  document.getElementById("advStandardInput").value = bookingConfig.standardAdvance ?? 2000;
+  document.getElementById("advHighInput").value = bookingConfig.highAdvance ?? 5000;
+  document.getElementById("advExtraDayInput").value = bookingConfig.extraDayAdvance ?? 0;
+
+  renderAdminBookings();
+  renderAdminRentalsList();
+  renderBlockedDatesList();
+}
+
+function renderAdminBookings(){
+  const tbody = document.getElementById("adminBookingsBody");
+  tbody.innerHTML = "";
+  if(!allBookings.length){
+    tbody.innerHTML = `<tr><td colspan="6">No bookings yet.</td></tr>`;
+    return;
+  }
+  allBookings.forEach(b => {
+    const tr = document.createElement("tr");
+    const reschedInfo = b.rescheduleRequest
+      ? `<div style="margin-top:5px;color:#ffd985">Reschedule → ${b.rescheduleRequest.requestedDate} (${b.rescheduleRequest.status})</div>`
+      : "";
+    tr.innerHTML = `
+      <td><strong>${b.customerName}</strong><br>${b.customerPhone}<br><small>${b.venue}</small></td>
+      <td><strong>${b.setupName}</strong><br><small>${(b.rentalNames || []).join(", ") || "—"}</small></td>
+      <td>${b.startDate}<br>(${b.days}d)</td>
+      <td>Total: ${money(b.totalAmount)}<br>Adv: ${money(b.advanceAmount)}</td>
+      <td><span class="badge badge-pending">${b.status}</span>${reschedInfo}</td>
+      <td style="display:flex;flex-direction:column;gap:5px">
+        <button type="button" class="btn btn-ok btn-sm" data-act="confirm" data-id="${b.id}">CONFIRM</button>
+        ${b.rescheduleRequest && b.rescheduleRequest.status === "pending" ? `<button type="button" class="btn btn-yellow btn-sm" data-act="approve-resched" data-id="${b.id}">APPROVE DATE</button>` : ""}
+        <button type="button" class="btn btn-danger btn-sm" data-act="cancel" data-id="${b.id}">CANCEL</button>
+      </td>
+    `;
+    tr.querySelectorAll("button[data-act]").forEach(btn => {
+      btn.onclick = async () => {
+        const act = btn.dataset.act;
+        if(act === "confirm"){
+          await updateDoc(doc(db, "bookings", b.id), { status: "confirmed" });
+        }else if(act === "cancel"){
+          await updateDoc(doc(db, "bookings", b.id), { status: "cancelled" });
+        }else if(act === "approve-resched" && b.rescheduleRequest){
+          const newStart = b.rescheduleRequest.requestedDate;
+          const newDates = expandDateRange(newStart, b.days || 1);
+          await updateDoc(doc(db, "bookings", b.id), {
+            startDate: newStart,
+            dates: newDates,
+            status: "confirmed",
+            rescheduleRequest: { ...b.rescheduleRequest, status: "approved" }
+          });
+        }
+      };
+    });
+    tbody.appendChild(tr);
+  });
+}
+
+document.getElementById("saveAdvanceRatesBtn").onclick = async () => {
+  const std = Math.max(0, Number(document.getElementById("advStandardInput").value || 0));
+  const high = Math.max(0, Number(document.getElementById("advHighInput").value || 0));
+  const extra = Math.max(0, Number(document.getElementById("advExtraDayInput").value || 0));
+  try{
+    await setDoc(doc(db, "settings", "bookingConfig"), {
+      standardAdvance: std,
+      highAdvance: high,
+      extraDayAdvance: extra
+    }, { merge: true });
+    document.getElementById("advanceSaveMsg").innerHTML = `<div class="status-banner status-ok">Advance rates updated live!</div>`;
+  }catch(err){
+    alert("Failed to save advance rates: " + err.message);
+  }
+};
+
+document.getElementById("addRentalItemBtn").onclick = async () => {
+  const name = document.getElementById("newRentalName").value.trim();
+  const category = document.getElementById("newRentalCategory").value;
+  const pricePerDay = Number(document.getElementById("newRentalPrice").value || 0);
+  const maxPerDay = Math.max(1, Number(document.getElementById("newRentalMaxPerDay").value || 5));
+  const description = document.getElementById("newRentalDesc").value.trim();
+  if(!name || pricePerDay <= 0){
+    alert("Enter rental name and valid daily price.");
+    return;
+  }
+  const id = "rental-" + Date.now();
+  try{
+    await setDoc(doc(db, "catalog", id), { id, name, category, pricePerDay, maxPerDay, description });
+    document.getElementById("newRentalName").value = "";
+    document.getElementById("newRentalPrice").value = "";
+    document.getElementById("newRentalDesc").value = "";
+    alert("Rental item added to website!");
+  }catch(err){
+    alert("Error adding rental item: " + err.message);
+  }
+};
+
+function renderAdminRentalsList(){
+  const wrap = document.getElementById("rentalAdminList");
+  wrap.innerHTML = "";
+  rentalsCatalog.forEach(item => {
+    const row = document.createElement("div");
+    row.style.cssText = "display:flex;justify-content:space-between;align-items:center;background:#160015;padding:9px 12px;border-radius:8px;font-size:10px";
+    row.innerHTML = `<span><strong>${item.name}</strong> (${item.category}) · ${money(item.pricePerDay)}/day · Max ${item.maxPerDay}/day</span>`;
+    const delBtn = document.createElement("button");
+    delBtn.type = "button";
+    delBtn.className = "btn btn-danger btn-sm";
+    delBtn.textContent = "REMOVE";
+    delBtn.onclick = async () => {
+      try{ await deleteDoc(doc(db, "catalog", item.id)); }
+      catch(e){ alert(e.message); }
+    };
+    row.appendChild(delBtn);
+    wrap.appendChild(row);
+  });
+}
+
+document.getElementById("addBlockDateBtn").onclick = async () => {
+  const date = document.getElementById("blockDateInput").value;
+  const scope = document.getElementById("blockScopeSelect").value;
+  const reason = document.getElementById("blockReasonInput").value.trim() || "Blocked by Admin";
+  if(!date){ alert("Select a date to block."); return; }
+  try{
+    await addDoc(collection(db, "blockedDates"), { date, scope, reason });
+    document.getElementById("blockReasonInput").value = "";
+  }catch(err){ alert("Error blocking date: " + err.message); }
+};
+
+function renderBlockedDatesList(){
+  const wrap = document.getElementById("blockedDatesList");
+  wrap.innerHTML = "";
+  blockedDates.forEach(blk => {
+    const row = document.createElement("div");
+    row.style.cssText = "display:flex;justify-content:space-between;align-items:center;background:#160015;padding:9px 12px;border-radius:8px;font-size:10px";
+    row.innerHTML = `<span><strong>${blk.date}</strong> · Scope: ${blk.scope} · ${blk.reason}</span>`;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-outline btn-sm";
+    btn.textContent = "UNBLOCK";
+    btn.onclick = async () => {
+      try{ await deleteDoc(doc(db, "blockedDates", blk.id)); }
+      catch(e){ alert(e.message); }
+    };
+    row.appendChild(btn);
+    wrap.appendChild(row);
+  });
+}
+
+/* ==========================================
+   FIRESTORE REALTIME LISTENERS & AUTH
+========================================== */
+
+onAuthStateChanged(auth, user => {
+  currentUser = user;
+  const uStatus = document.getElementById("userAuthStatus");
+  const uLogout = document.getElementById("userLogoutBtn");
+  if(user){
+    uStatus.className = "status-banner status-ok";
+    uStatus.textContent = `Signed in as ${user.email}`;
+    uLogout.style.display = "inline-flex";
+  }else{
+    uStatus.className = "status-banner status-warn";
+    uStatus.textContent = "Sign in to view your bookings or request a date reschedule (requires owner approval).";
+    uLogout.style.display = "none";
+  }
+  renderUserBookings();
+  renderAdminConsole();
+});
+
+onSnapshot(doc(db, "settings", "bookingConfig"), snap => {
+  if(snap.exists()){
+    bookingConfig = { ...bookingConfig, ...snap.data() };
+    updateBookingSummary();
+    renderAdminConsole();
+  }
+}, () => {});
+
+onSnapshot(collection(db, "catalog"), snap => {
+  const customItems = [];
+  snap.forEach(d => customItems.push({ id: d.id, ...d.data() }));
+  rentalsCatalog = customItems.length ? customItems : [...defaultRentals];
+  renderRentalsSection();
+  updateBookingSummary();
+  renderAdminRentalsList();
+}, () => {});
+
+onSnapshot(collection(db, "bookings"), snap => {
+  allBookings = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  updateBookingSummary();
+  renderUserBookings();
+  renderAdminBookings();
+}, () => {});
+
+onSnapshot(collection(db, "blockedDates"), snap => {
+  blockedDates = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  updateBookingSummary();
+  renderBlockedDatesList();
+}, () => {});
+
+/* ==========================================
+   LEGAL POLICIES MODAL
+========================================== */
+
+const POLICIES = {
+  terms: {
+    title: "Terms & Conditions",
+    html: `
+      <p>These terms govern event setup and equipment bookings with <strong>${BUSINESS.name}</strong> (Proprietor: <strong>${BUSINESS.owner}</strong>, Pilani, Jhunjhunu, Rajasthan).</p>
+      <h3>1. Daily Capacity Limits</h3>
+      <ul>
+        <li><strong>4×4 Tower Setups:</strong> Maximum 1 booking per calendar date.</li>
+        <li><strong>Single-Sided Tower Setups:</strong> Maximum 2 bookings per calendar date.</li>
+        <li><strong>Individual Rentals (Speakers, Bass, CRP Lights, PAR Lights):</strong> Subject to per-day stock availability.</li>
+      </ul>
+      <h3>2. Balance Payment & Setup Execution</h3>
+      <ul>
+        <li>Remaining balance is payable prior to or at event setup completion as agreed at booking.</li>
+        <li>Equipment placement follows the selected package design and venue layout conditions.</li>
+      </ul>
+    `
+  },
+  refund: {
+    title: "Non-Refundable Advance & Rescheduling Policy",
+    html: `
+      <h3>1. Non-Refundable Advance</h3>
+      <ul>
+        <li>All advance booking payments are <strong>strictly non-refundable</strong> once a date slot is reserved, as equipment and crew scheduling are held exclusively for your event.</li>
+      </ul>
+      <h3>2. Owner-Approval-Only Rescheduling</h3>
+      <ul>
+        <li>Date changes or rescheduling requests are <strong>not automatic</strong> and require explicit approval from the owner (<strong>${BUSINESS.owner}</strong>) subject to open capacity on the requested date.</li>
+      </ul>
+    `
+  },
+  liability: {
+    title: "Venue Power & Equipment Damage Liability",
+    html: `
+      <h3>1. Venue Power Supply</h3>
+      <ul>
+        <li>The client/organizer must ensure stable, safe, and adequate electrical power and proper earthing/connection points at the venue.</li>
+        <li>Delays or interruptions caused by inadequate venue power or local restrictions are outside ${BUSINESS.name}'s liability.</li>
+      </ul>
+      <h3>2. Client Responsibility for Damage or Loss</h3>
+      <ul>
+        <li>The client is responsible for crowd safety around trusses, towers, speakers, and lighting, and is liable for any damage, tampering, weather/liquid exposure, or loss of sound, lighting, or truss equipment caused by guests, venue conditions, or negligence.</li>
+      </ul>
+    `
+  },
+  privacy: {
+    title: "Privacy Policy",
+    html: `
+      <p><strong>${BUSINESS.name}</strong> collects only necessary booking and contact details (name, phone/WhatsApp, venue, event dates, and account email) to coordinate bookings and manage reschedule requests.</p>
+      <p>Contact for queries: <strong>${BUSINESS.email}</strong> or <strong>+91 9529102585</strong>.</p>
+    `
+  }
+};
+
+const policyModal = document.getElementById("policyModal");
+document.querySelectorAll("[data-policy]").forEach(btn => {
+  btn.onclick = () => {
+    const p = POLICIES[btn.dataset.policy];
+    if(!p) return;
+    document.getElementById("policyTitle").textContent = p.title;
+    document.getElementById("policyContent").innerHTML = p.html;
+    policyModal.classList.add("active");
+  };
+});
+document.getElementById("closePolicyModal").onclick = () => policyModal.classList.remove("active");
+
+/* ==========================================
+   LIGHTBOX, POPSTATE, NAVIGATION & INIT
 ========================================== */
 
 function showLightbox(){
   document.getElementById("lightbox").classList.add("active");
-  document.body.style.overflow="hidden";
+  document.body.style.overflow = "hidden";
 }
-
 function openLightbox(src){
-  document.getElementById("lightboxImage").src=src;
+  document.getElementById("lightboxImage").src = src;
   showLightbox();
-  if(!(history.state && history.state.happyFloorLayer==="lightbox")){
-    history.pushState({happyFloorLayer:"lightbox",setupId:currentSetup?.id||null},"",window.location.hash||"#photo");
+  if(!(history.state && history.state.happyFloorLayer === "lightbox")){
+    history.pushState({ happyFloorLayer: "lightbox", setupId: currentSetup?.id || null }, "", window.location.hash || "#photo");
   }
 }
-
 function hideLightbox(){
   document.getElementById("lightbox").classList.remove("active");
-  document.getElementById("lightboxImage").src="";
-  document.body.style.overflow=drawer.classList.contains("active")?"hidden":"";
+  document.getElementById("lightboxImage").src = "";
+  document.body.style.overflow = drawer.classList.contains("active") ? "hidden" : "";
 }
-
 function closeLightbox(){
   if(!document.getElementById("lightbox").classList.contains("active")) return;
-  if(history.state && history.state.happyFloorLayer==="lightbox") history.back();
+  if(history.state && history.state.happyFloorLayer === "lightbox") history.back();
   else hideLightbox();
 }
-
-document.getElementById("closeLightbox").onclick=closeLightbox;
-document.getElementById("lightbox").onclick=e=>{
-  if(e.target.id==="lightbox") closeLightbox();
+document.getElementById("closeLightbox").onclick = closeLightbox;
+document.getElementById("lightbox").onclick = e => {
+  if(e.target.id === "lightbox") closeLightbox();
 };
 
-// Browser / Android back: photo viewer first, then setup drawer.
-window.addEventListener("popstate",event=>{
-  const lightbox=document.getElementById("lightbox");
+window.addEventListener("popstate", () => {
+  const lightbox = document.getElementById("lightbox");
   if(lightbox.classList.contains("active")) hideLightbox();
-
-  const hash=window.location.hash;
-  const match=hash.match(/^#setup-(\d+)$/);
+  const hash = window.location.hash;
+  const match = hash.match(/^#setup-(\d+)$/);
   if(match){
-    const id=Number(match[1]);
-    if(!drawer.classList.contains("active") || currentSetup?.id!==id){
-      openSetup(id,{fromPopState:true});
+    const id = Number(match[1]);
+    if(!drawer.classList.contains("active") || currentSetup?.id !== id){
+      openSetup(id, { fromPopState: true });
     }
   }else if(drawer.classList.contains("active")){
     hideDrawer();
   }
 });
 
-
-/* ==========================================
-   MOBILE NAVIGATION
-========================================== */
-
-document.getElementById("menuToggle").onclick=()=>{
-
+document.getElementById("menuToggle").onclick = () => {
   document.getElementById("navLinks").classList.toggle("open");
-
 };
-
-document.querySelectorAll(".nav-links a").forEach(link=>{
-
-  link.addEventListener("click",()=>{
+document.querySelectorAll(".nav-links a, .nav-links button").forEach(el => {
+  el.addEventListener("click", () => {
     document.getElementById("navLinks").classList.remove("open");
   });
-
 });
 
-
-/* ==========================================
-   KEYBOARD CONTROLS
-========================================== */
-
-document.addEventListener("keydown",e=>{
-
-  if(e.key==="Escape"){
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape"){
     if(document.getElementById("lightbox").classList.contains("active")) closeLightbox();
+    else if(policyModal.classList.contains("active")) policyModal.classList.remove("active");
+    else if(bookingModal.classList.contains("active")) bookingModal.classList.remove("active");
+    else if(accountModal.classList.contains("active")) accountModal.classList.remove("active");
+    else if(adminModal.classList.contains("active")) adminModal.classList.remove("active");
     else if(drawer.classList.contains("active")) closeDrawer();
   }
-
   if(drawer.classList.contains("active")){
-
-    if(e.key==="ArrowRight")goToMedia(currentMediaIndex+1);
-    if(e.key==="ArrowLeft")goToMedia(currentMediaIndex-1);
-
+    if(e.key === "ArrowRight") goToMedia(currentMediaIndex + 1);
+    if(e.key === "ArrowLeft") goToMedia(currentMediaIndex - 1);
   }
-
 });
 
-
-/* ==========================================
-   INITIALIZE
-========================================== */
-
-document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 renderCards();
+renderRentalsSection();
+populateSetupDropdown("");
+updateBookingSummary();
 
-// Open a setup directly when a shared #setup-N link is visited.
-const initialSetupMatch=window.location.hash.match(/^#setup-(\d+)$/);
+const initialSetupMatch = window.location.hash.match(/^#setup-(\d+)$/);
 if(initialSetupMatch){
-  const initialId=Number(initialSetupMatch[1]);
-  if(setups.some(setup=>setup.id===initialId)){
-    openSetup(initialId,{fromPopState:true});
-    history.replaceState({happyFloorLayer:"drawer",setupId:initialId},"", "#setup-"+initialId);
+  const initialId = Number(initialSetupMatch[1]);
+  if(setups.some(setup => setup.id === initialId)){
+    openSetup(initialId, { fromPopState: true });
+    history.replaceState({ happyFloorLayer: "drawer", setupId: initialId }, "", "#setup-" + initialId);
   }
 }
-
 </script>
 
 </body>
