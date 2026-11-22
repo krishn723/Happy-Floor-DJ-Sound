@@ -731,7 +731,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-off
   </div>
 </section>
 
-<!-- STANDALONE RENTALS (SPEAKERS, BASS, CRP, PAR LIGHTS) -->
+<!-- STANDALONE RENTALS -->
 <section class="section" id="rentals">
   <div class="container">
     <div class="section-heading">
@@ -1047,7 +1047,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-off
   <div class="modal-card wide">
     <div class="modal-top">
       <div>
-        <small>RESTRICTED OWNER CONSOLE · ashokganga1122@gmail.com</small>
+        <small>RESTRICTED ADMIN CONSOLE · krishansaini5152@gmail.com</small>
         <h2>Happy Floor DJ Sound — Admin Panel</h2>
       </div>
       <button type="button" class="close-btn" id="closeAdminModal">×</button>
@@ -1057,7 +1057,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-off
       <div class="form-grid">
         <div class="field">
           <label for="adminEmailInput">Admin Email</label>
-          <input type="email" id="adminEmailInput" value="ashokganga1122@gmail.com">
+          <input type="email" id="adminEmailInput" value="krishansaini5152@gmail.com">
         </div>
         <div class="field">
           <label for="adminPassInput">Password</label>
@@ -1069,7 +1069,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-off
         <button type="button" class="btn btn-outline btn-sm" id="adminGoogleLoginBtn">ADMIN GOOGLE SIGN-IN</button>
         <button type="button" class="btn btn-danger btn-sm" id="adminLogoutBtn" style="display:none">ADMIN SIGN OUT</button>
       </div>
-      <div id="adminAuthStatus" class="status-banner status-warn">Only ashokganga1122@gmail.com has admin privileges.</div>
+      <div id="adminAuthStatus" class="status-banner status-warn">Only krishansaini5152@gmail.com has admin privileges.</div>
     </div>
 
     <div id="adminConsole" style="display:none">
@@ -1122,7 +1122,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-off
         <div id="advanceSaveMsg"></div>
       </div>
 
-      <!-- TAB 3: ADD STANDALONE RENTALS (SPEAKERS, BASS, CRP, PAR LIGHTS) -->
+      <!-- TAB 3: ADD STANDALONE RENTALS -->
       <div id="rentalsTab" class="admin-tab" style="display:none">
         <p style="font-size:11px;color:var(--muted);margin-bottom:14px">
           Add standalone rental items (speakers, bass/subwoofers, CRP lights, PAR lights, etc.) or extra setups.
@@ -1219,13 +1219,11 @@ import {
 import {
   getFirestore,
   doc,
-  getDoc,
   setDoc,
   addDoc,
   updateDoc,
   deleteDoc,
   collection,
-  getDocs,
   onSnapshot,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
@@ -1237,7 +1235,7 @@ import {
 const BUSINESS = {
   name: "Happy Floor DJ Sound",
   owner: "Ashok Kumar",
-  adminEmail: "ashokganga1122@gmail.com",
+  adminEmail: "krishansaini5152@gmail.com",
   phone: "919529102585",
   secondaryPhone: "919352450084",
   email: "krishansaini5152@gmail.com",
@@ -1246,13 +1244,13 @@ const BUSINESS = {
 };
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA-pHnDFNl8-BBdUVwkwxOxi1tUJfGYIs8",
-  authDomain: "happy-floor-dj-sound.firebaseapp.com",
-  projectId: "happy-floor-dj-sound",
-  storageBucket: "happy-floor-dj-sound.firebasestorage.app",
-  messagingSenderId: "491488555142",
-  appId: "1:491488555142:web:442677ad0a78996e77e107",
-  measurementId: "G-G8KBH8044L"
+  apiKey: "AIzaSyDy2Uiac-ACY6ohLHWL1agYb-8JTMSdKYk",
+  authDomain: "krish-dj.firebaseapp.com",
+  projectId: "krish-dj",
+  storageBucket: "krish-dj.firebasestorage.app",
+  messagingSenderId: "921056724796",
+  appId: "1:921056724796:web:eb14bc211e333e63a90039",
+  measurementId: "G-N5BNRB82WG"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -1261,7 +1259,7 @@ const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 
 /* ==========================================
-   SETUP DATABASE (PRESERVED FROM UPDATED.HTML)
+   SETUP DATABASE
 ========================================== */
 
 const setups = [
@@ -1390,7 +1388,6 @@ const setups = [
   }
 ];
 
-/* Default Standalone Rentals (also extensible via Admin Panel -> Firestore) */
 const defaultRentals = [
   { id:"rental-speakers", name:"Extra Top Speakers (Pair)", category:"SOUND", pricePerDay:2500, maxPerDay:6, description:"High-output speakers for wider coverage or stage reinforcement." },
   { id:"rental-bass", name:"Bass / Subwoofer Unit", category:"SOUND", pricePerDay:3000, maxPerDay:4, description:"Deep low-end bass / subwoofer rental per day." },
@@ -1398,7 +1395,6 @@ const defaultRentals = [
   { id:"rental-par", name:"PAR Lights Set (6 Lights)", category:"LIGHTS", pricePerDay:1500, maxPerDay:8, description:"LED PAR wash lights for stage, mandap, or floor highlights." }
 ];
 
-/* App State */
 let bookingConfig = {
   standardAdvance: 2000,
   highAdvance: 5000,
@@ -1808,7 +1804,6 @@ function checkDateRangeAvailability(setupObj, selectedRentals, startDateStr, day
   const activeBookings = allBookings.filter(b => b.status !== "cancelled");
 
   for(const d of dates){
-    // Check blocked dates
     const isBlocked = blockedDates.some(blk => {
       if(blk.date !== d) return false;
       if(blk.scope === "all") return true;
@@ -2046,7 +2041,7 @@ function renderUserBookings(){
 }
 
 /* ==========================================
-   ADMIN PANEL (ashokganga1122@gmail.com)
+   ADMIN PANEL (krishansaini5152@gmail.com)
 ========================================== */
 
 const adminModal = document.getElementById("adminModal");
